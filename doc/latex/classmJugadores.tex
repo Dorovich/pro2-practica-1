@@ -1,0 +1,209 @@
+\hypertarget{classmJugadores}{}\doxysection{Referencia de la Clase m\+Jugadores}
+\label{classmJugadores}\index{mJugadores@{mJugadores}}
+
+
+Representa un conjunto de todos los jugadores del circuito.  
+
+
+
+
+{\ttfamily \#include $<$mapa\+\_\+jugadores.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmJugadores_a225ee1356780c76d31ba178b244e1ad2}{m\+Jugadores}} ()
+\begin{DoxyCompactList}\small\item\em Creadora indefinida. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmJugadores_a8f20fd298a2689f17e3780b1b8d172b3}{m\+Jugadores}} (int p)
+\begin{DoxyCompactList}\small\item\em Creadora definida. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_ad081723b8d8537ef243beb7b02982789}{leer}} ()
+\begin{DoxyCompactList}\small\item\em Operación de lectura. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_adaeadc9fd4c34a2b380af3d4cc32ddd8}{anadir}} (string n)
+\begin{DoxyCompactList}\small\item\em Añadir un jugador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_a1b2efd062348e882863bf10911e6dfed}{baja}} (string n)
+\begin{DoxyCompactList}\small\item\em Dar de baja a un jugador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_a36a22073c855b28e02397f1eafb0448c}{ranking}} ()
+\begin{DoxyCompactList}\small\item\em Operación de escritura del ranking. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_a8a3d2ccb4f0d7c3d29678d425893adc6}{escribir}} () const
+\begin{DoxyCompactList}\small\item\em Operación de escritura indefinida. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_a53fba24d64486498a73cb30d82a5b312}{escribir}} (string n) const
+\begin{DoxyCompactList}\small\item\em Operación de escritura definida. \end{DoxyCompactList}\item 
+map$<$ string, \mbox{\hyperlink{classJugador}{Jugador}} $>$\+::iterator \mbox{\hyperlink{classmJugadores_a0aefcc2dd64b36f55e06104ab4d6cd0d}{consultar\+\_\+rnk}} (int i) const
+\begin{DoxyCompactList}\small\item\em Comprovación de existencia. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmJugadores_af2709e4dd211ce059fa3c3c6a38c15be}{existe}} (string n) const
+\begin{DoxyCompactList}\small\item\em Comprovación de existencia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un conjunto de todos los jugadores del circuito. 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classmJugadores_a225ee1356780c76d31ba178b244e1ad2}\label{classmJugadores_a225ee1356780c76d31ba178b244e1ad2}} 
+\index{mJugadores@{mJugadores}!mJugadores@{mJugadores}}
+\index{mJugadores@{mJugadores}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{mJugadores()}{mJugadores()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily m\+Jugadores\+::m\+Jugadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora indefinida. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha creado un mapa vacío de tamaño 0 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a8f20fd298a2689f17e3780b1b8d172b3}\label{classmJugadores_a8f20fd298a2689f17e3780b1b8d172b3}} 
+\index{mJugadores@{mJugadores}!mJugadores@{mJugadores}}
+\index{mJugadores@{mJugadores}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{mJugadores()}{mJugadores()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily m\+Jugadores\+::m\+Jugadores (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})}
+
+
+
+Creadora definida. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha creado un mapa vacío de tamaño p 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classmJugadores_adaeadc9fd4c34a2b380af3d4cc32ddd8}\label{classmJugadores_adaeadc9fd4c34a2b380af3d4cc32ddd8}} 
+\index{mJugadores@{mJugadores}!anadir@{anadir}}
+\index{anadir@{anadir}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{anadir()}{anadir()}}
+{\footnotesize\ttfamily void m\+Jugadores\+::anadir (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption})}
+
+
+
+Añadir un jugador. 
+
+\begin{DoxyPrecond}{Precondición}
+No existe un jugador con identificador n en el mapa 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha añadido un jugador con identificador n y 0 puntos al mapa 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a1b2efd062348e882863bf10911e6dfed}\label{classmJugadores_a1b2efd062348e882863bf10911e6dfed}} 
+\index{mJugadores@{mJugadores}!baja@{baja}}
+\index{baja@{baja}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{baja()}{baja()}}
+{\footnotesize\ttfamily void m\+Jugadores\+::baja (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption})}
+
+
+
+Dar de baja a un jugador. 
+
+\begin{DoxyPrecond}{Precondición}
+Existe un jugador con identificador n en el mapa 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha dado de baja al jugador con identificador n, y sus sucesores han subido un puesto en el ranking 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a0aefcc2dd64b36f55e06104ab4d6cd0d}\label{classmJugadores_a0aefcc2dd64b36f55e06104ab4d6cd0d}} 
+\index{mJugadores@{mJugadores}!consultar\_rnk@{consultar\_rnk}}
+\index{consultar\_rnk@{consultar\_rnk}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{consultar\_rnk()}{consultar\_rnk()}}
+{\footnotesize\ttfamily map$<$ string, \mbox{\hyperlink{classJugador}{Jugador}} $>$\+::iterator m\+Jugadores\+::consultar\+\_\+rnk (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Comprovación de existencia. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto{\itshape  }}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+{\itshape {\itshape  Se devuelve true si el jugador de nombre n existe en el circuito, o false en caso contrario }}
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a8a3d2ccb4f0d7c3d29678d425893adc6}\label{classmJugadores_a8a3d2ccb4f0d7c3d29678d425893adc6}} 
+\index{mJugadores@{mJugadores}!escribir@{escribir}}
+\index{escribir@{escribir}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{escribir()}{escribir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void m\+Jugadores\+::escribir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Operación de escritura indefinida. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha escrito por el canal estándar de salida, en orden creciente de identificador, el nombre y todas las estadísticas de cada jugador del circuito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a53fba24d64486498a73cb30d82a5b312}\label{classmJugadores_a53fba24d64486498a73cb30d82a5b312}} 
+\index{mJugadores@{mJugadores}!escribir@{escribir}}
+\index{escribir@{escribir}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{escribir()}{escribir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void m\+Jugadores\+::escribir (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Operación de escritura definida. 
+
+\begin{DoxyPrecond}{Precondición}
+Existe un jugador con identificador n en el mapa 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha escrito por el canal estándar de salida el nombre y todas las estadísticas del jugador de identificador n del circuito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_af2709e4dd211ce059fa3c3c6a38c15be}\label{classmJugadores_af2709e4dd211ce059fa3c3c6a38c15be}} 
+\index{mJugadores@{mJugadores}!existe@{existe}}
+\index{existe@{existe}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{existe()}{existe()}}
+{\footnotesize\ttfamily bool m\+Jugadores\+::existe (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Comprovación de existencia. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto{\itshape  }}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+{\itshape {\itshape  Se devuelve true si el jugador de nombre n existe en el circuito, o false en caso contrario }}
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_ad081723b8d8537ef243beb7b02982789}\label{classmJugadores_ad081723b8d8537ef243beb7b02982789}} 
+\index{mJugadores@{mJugadores}!leer@{leer}}
+\index{leer@{leer}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{leer()}{leer()}}
+{\footnotesize\ttfamily void m\+Jugadores\+::leer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Operación de lectura. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han leído tantos jugadores como tamaño tiene el mapa 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a36a22073c855b28e02397f1eafb0448c}\label{classmJugadores_a36a22073c855b28e02397f1eafb0448c}} 
+\index{mJugadores@{mJugadores}!ranking@{ranking}}
+\index{ranking@{ranking}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{ranking()}{ranking()}}
+{\footnotesize\ttfamily void m\+Jugadores\+::ranking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Operación de escritura del ranking. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha escrito por el canal estándar de salida, en orden creciente de identificador, la posición, el nombre y las estadísticas de cada jugador del circuito 
+\end{DoxyPostcond}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mapa__jugadores_8hh}{mapa\+\_\+jugadores.\+hh}}\item 
+mapa\+\_\+jugadores.\+cc\end{DoxyCompactItemize}

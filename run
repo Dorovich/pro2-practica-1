@@ -1,0 +1,5 @@
+#!/bin/sh
+
+make
+./program.exe < runfiles/advanced_inp.txt > runfiles/out.txt
+meld runfiles/out.txt runfiles/advanced_out.txt
