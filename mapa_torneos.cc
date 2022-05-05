@@ -40,8 +40,8 @@ void mTorneos::iniciar(string id, const mJugadores &lista_jug) {
     torneos[id].iniciar(participantes);
 }
 
-void mTorneos::finalizar(string id, const vector<map<string,Jugador>::iterator> &participantes) {
-    torneos[id].finalizar(participantes);
+void mTorneos::finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug) {
+    torneos[id].finalizar(lista_ctg, lista_jug);
 }
 
 void mTorneos::escribir(const mCategorias &lista_ctg) const {
@@ -49,7 +49,7 @@ void mTorneos::escribir(const mCategorias &lista_ctg) const {
     for (map<string,Torneo>::const_iterator it = torneos.begin(); it != torneos.end(); it++) {
         cout << it->first << ' ';
         int index = it->second.consultar_ctg();
-        cout << lista_ctg.consultar_ctg(index-1) << endl;
+        cout << lista_ctg.consultar_ctg(index-1)->first << endl;
     }
 }
 

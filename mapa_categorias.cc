@@ -26,8 +26,8 @@ void mCategorias::escribir() const {
     }
 }
 
-string mCategorias::consultar_ctg(int n) const {
-    return ids[n]->first;
+map<string,vector<int>>::const_iterator mCategorias::consultar_ctg(int n) const {
+    return ids[n];
 }
 
 int mCategorias::numero_ctg() const {

@@ -70,7 +70,7 @@ class mTorneos {
             \pre <em>cierto</em>
             \post Se ha finalizado el torneo con identificador id
         */
-        void finalizar(string id, const vector<map<string,Jugador>::iterator> &participantes);
+        void finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug);
         
         // Consultoras
         

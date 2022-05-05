@@ -31,7 +31,8 @@ void escribir_cuadro (const BinTree<int> &cuadro, const vector<map<string,Jugado
     else cout << cuadro.value() << '.' << participantes[cuadro.value()-1]->first;
 }
 
-void Torneo::iniciar(const vector<map<string,Jugador>::iterator> &participantes) {
+void Torneo::iniciar(const vector<map<string,Jugador>::iterator> &p) {
+    participantes = p;
     int part = participantes.size();
     int altura = 1+ceil(log2(part));
     int max = pow(2, altura-1);
@@ -62,7 +63,17 @@ bool procesar_partido(int &wsa, int &wsb, int &wga, int &wgb) {
         }
         return true;
     }
-    else return false;
+    return false;
+}
+
+void procesar_puntos(const BinTree<int> &resultados, const vector<map<string,Jugador>::iterator> &participantes, const mCategorias &lista_ctg, const int categoria, int i, const int tam) {
+    if (not resultados.empty() or i < tam) {
+        int puntos = lista_ctg.consultar_ctg(categoria)->second[i];
+        participantes[resultados.value()-1]->second.add_stat("puntos", puntos);
+        procesar_puntos(resultados.left(), participantes, lista_ctg, categoria, i+1, tam);
+        procesar_puntos(resultados.right(), participantes, lista_ctg, categoria, i+1, tam);
+    }
+    return;
 }
 
 BinTree<int> procesar_torneo(const BinTree<int> &cuadro, const vector<map<string,Jugador>::iterator> &participantes) {
@@ -91,14 +102,16 @@ BinTree<int> procesar_torneo(const BinTree<int> &cuadro, const vector<map<string
     return BinTree<int> (winner, left, right);
 }
 
-void escribir_resultados (const BinTree<int> &resultados) {}
+void escribir_resultados (/*const BinTree<int> &resultados*/) {
+    cout << "hasta aqui funciona!!" << endl;
+}
 
-void Torneo::finalizar(const vector<map<string,Jugador>::iterator> &participantes) {
+void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
     BinTree<int> resultados = procesar_torneo(cuadro, participantes);
-    escribir_resultados(resultados);
-    //falta sumar los puntos a cada jugador
-    //la clase mJugadores tiene una nueva operacion (reordenar_rnk) que actualiza el ranking segun los puntos
-    //luego falta escribirlos y tal
+    int tam = lista_ctg.consultar_ctg(categoria)->second.size();
+    procesar_puntos(resultados, participantes, lista_ctg, categoria, 0, tam);
+    lista_jug.reordenar_rnk();
+    escribir_resultados(/*resultados*/);
 }
 
 int Torneo::consultar_ctg() const {

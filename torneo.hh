@@ -6,6 +6,7 @@
 #define TORNEO_HH
 
 #include "mapa_jugadores.hh"
+#include "mapa_categorias.hh"
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
 #include <iostream>
@@ -22,6 +23,7 @@ class Torneo {
         
         int categoria;
         BinTree<int> cuadro;
+        vector<map<string,Jugador>::iterator> participantes;
 
     public:
 
@@ -49,7 +51,7 @@ class Torneo {
             \post Se ha creado y escrito el cuadro de emparejamientos del parámetro
             implícito
         */
-        void iniciar(const vector<map<string,Jugador>::iterator> &participantes);
+        void iniciar(const vector<map<string,Jugador>::iterator> &p);
 
         /** @brief Finalizar el torneo
 
@@ -57,7 +59,7 @@ class Torneo {
             \post Se ha configurado y escrito el cuadro de resultados del parámetro
             implícito
         */
-        void finalizar(const vector<map<string,Jugador>::iterator> &participantes) {}
+        void finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug);
 
         // Consultoras
         

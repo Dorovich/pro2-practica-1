@@ -59,7 +59,7 @@ class mCategorias {
             \pre <em>cierto</em>
             \post Se devuelve el nombre de la categoría de índice n del parámetro implícito
         */
-        string consultar_ctg(int n) const;
+        map<string,vector<int>>::const_iterator consultar_ctg(int n) const;
 
         /** @brief Comprovación de existencia
 

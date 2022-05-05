@@ -66,7 +66,7 @@ int main () {
         else if (cmd == "finalizar_torneo" or cmd == "ft") {
             string t;
             cin >> t;
-            T.finalizar(t, P);
+            T.finalizar(t, C, P);
         }
         else if (cmd == "consultar_jugador" or cmd == "cj") {
             string n;
