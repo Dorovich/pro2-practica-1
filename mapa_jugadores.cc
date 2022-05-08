@@ -47,7 +47,7 @@ void mJugadores::baja(string n) {
 }
 
 bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b) {
-    return a->second.consultar_stat("rank") < b->second.consultar_stat("rank");
+    return a->second.consultar_stat("puntos") < b->second.consultar_stat("puntos");
 }
 
 void mJugadores::ranking() {
