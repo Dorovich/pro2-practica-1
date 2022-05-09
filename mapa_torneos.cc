@@ -29,15 +29,15 @@ void mTorneos::baja(string id) {
 }
 
 void mTorneos::iniciar(string id, const mJugadores &lista_jug) {
-    int p;
-    cin >> p;
-    vector<map<string,Jugador>::iterator> participantes(p);
-    for (int i = 0; i < p; i++) {
-        int pos;
-        cin >> pos;
-        participantes[i] = lista_jug.consultar_rnk(pos-1);
-    }
-    torneos[id].iniciar(participantes);
+  int p;
+  cin >> p;
+  vector<map<string, Jugador>::iterator> participantes(p);
+  for (int i = 0; i < p; i++) {
+    int pos;
+    cin >> pos;
+    participantes[i] = lista_jug.consultar_rnk(pos - 1);
+  }
+  torneos[id].iniciar(participantes);
 }
 
 void mTorneos::finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug) {

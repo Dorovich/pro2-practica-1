@@ -47,11 +47,12 @@ void mJugadores::baja(string n) {
 }
 
 bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b) {
-    return a->second.consultar_stat("puntos") < b->second.consultar_stat("puntos");
+    return a->second.consultar_stat("puntos") > b->second.consultar_stat("puntos");
 }
 
 void mJugadores::ranking() {
     sort(rnk.begin(), rnk.end(), cmp);
+    for (int i = 0; i < size; i++) rnk[i]->second.modificar_stat("rank", i+1);
     for (int i = 0; i < size; i++) {
         cout << rnk[i]->second.consultar_stat("rank") << ' ' << rnk[i]->first << ' ' << rnk[i]->second.consultar_stat("puntos") << endl;
     }
@@ -59,7 +60,7 @@ void mJugadores::ranking() {
 
 void mJugadores::reordenar_rnk() {
     sort(rnk.begin(), rnk.end(), cmp);
-    for (int i = 0; i < size; i++) rnk[i]->second.modificar_stat("rnk", i+1);
+    for (int i = 0; i < size; i++) rnk[i]->second.modificar_stat("rank", i+1);
 }
 
 void mJugadores::escribir() const {
