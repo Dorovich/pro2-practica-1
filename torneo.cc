@@ -105,7 +105,6 @@ BinTree<int> procesar_torneo(const BinTree<int> &cuadro, vector<map<string,Jugad
         b->second.add_stat("wm", 1);
     }
 
-    //cout << "winner: " << winner << endl;
     return BinTree<int> (winner, left, right);
 }
 

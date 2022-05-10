@@ -1,0 +1,93 @@
+3 5
+King_of_the_Hill
+Masters_Peru
+Open_Mejico
+2000 0 0 0 0 0
+1000 700 300 100 50
+500 250 100 70 20
+
+1
+Monterrey 3
+
+10
+Amalarico
+Turismundo
+Sigerico
+Teodoredo
+Atanagildo
+Recaredo
+Ataulfo
+Eurico
+Rodrigo
+Sisenando
+
+listar_categorias
+listar_torneos
+listar_jugadores
+listar_ranking
+it Monterrey
+10
+  1 2 3 4 5 6 7 8 9 10
+ft Monterrey
+1-0
+0-1
+1-0
+0
+1-0
+0 0
+0-1
+0 0
+1-0
+0-1
+0
+0-1
+0 0
+1-0
+0 0
+listar_categorias
+listar_torneos
+listar_jugadores
+listar_ranking
+bt Monterrey
+lt
+nt Ciudad_de_Mejico 3
+nt Lima 2
+nt Royal 1
+bj Amalarico
+bj Turismundo
+bj Sigerico
+bj Teodoredo
+bj Atanagildo
+bj Recaredo
+bj Ataulfo
+bj Eurico
+bj Rodrigo
+bj Sisenando
+lj
+nj Alfa
+nj Bravo
+nj Charlie
+nj Echo
+nj Foxtrot
+nj Golf
+nj Hotel
+nj India
+nj Juliett
+nj Kilo
+nj Lima
+nj Mike
+nj November
+nj Oscar
+nj Papa
+nj Quebec
+nj Romeo
+nj Sierra
+nj Tango
+nj Uniform
+nj Victor
+nj Whiskey
+nj XRay
+nj Yankee
+nj Zulu
+lr
+fin
