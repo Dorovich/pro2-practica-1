@@ -155,7 +155,7 @@ void purgar_puntos_ultimosparticipantes(const vector<int> &ultimospuntos, const 
                 found = ultimosparticipantes[i] == participantes[j]->first;
                 j++;
             }
-            if (found) participantes[j-1]->second.add_stat("puntos", );
+            if (found) participantes[j-1]->second.add_stat("puntos", ultimospuntos[i]);
         }
     }
 }
@@ -175,7 +175,7 @@ void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
 
     //inicializar ultimosparticipantes
     ultimosparticipantes = vector<string> (participantes.size());
-    for (int i = 0; i < part; i++) ultimosparticipantes[i] = participantes[i]->first;
+    for (int i = 0; i < participantes.size(); i++) ultimosparticipantes[i] = participantes[i]->first;
 
     //escribir arbol de resultados
     cout << "(";
