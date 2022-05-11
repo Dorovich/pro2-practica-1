@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['torneo_52',['Torneo',['../classTorneo.html#a7bf6d35a7ec8d0e13a0bed8deb8add3e',1,'Torneo::Torneo()'],['../classTorneo.html#a83f583185350607882fb72e0e7f53771',1,'Torneo::Torneo(int c)']]]
+  ['ranking_62',['ranking',['../classmJugadores.html#a36a22073c855b28e02397f1eafb0448c',1,'mJugadores']]],
+  ['reordenar_5frnk_63',['reordenar_rnk',['../classmJugadores.html#add890872873f147e6a852ae07b033f6b',1,'mJugadores']]]
 ];

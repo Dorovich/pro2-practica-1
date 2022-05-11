@@ -3,31 +3,34 @@
 mCategorias::mCategorias(int c, int k) {
     size = c;
     maxpuntos = k;
-    ids = vector<map<string,vector<int>>::iterator> (size);
+    nombres = vector<string> (size);
 }
 
 void mCategorias::leer() {
-    vector<string> names(size);
-    for (int i = 0; i < size; i++) cin >> names[i];
+    for (int i = 0; i < size; i++) cin >> nombres[i];
     for (int i = 0; i < size; i++) {
         vector<int> pts(maxpuntos);
         for (int j = 0; j < maxpuntos; j++) cin >> pts[j];
-        categorias[names[i]] = pts;
-        ids[i] = categorias.find(names[i]);
+        categorias[nombres[i]] = pts;
     }
 }
 
 void mCategorias::escribir() const {
     cout << size << ' ' << maxpuntos << endl;
     for (int i = 0; i < size; i++) {
-        cout << ids[i]->first;
-        for (int j = 0; j < maxpuntos; j++) cout << ' ' << ids[i]->second[j];
+        cout << nombres[i];
+        vector<int> pts = categorias.find(nombres[i])->second;
+        for (int j = 0; j < maxpuntos; j++) cout << ' ' << pts[j];
         cout << endl;
     }
 }
 
-map<string,vector<int>>::const_iterator mCategorias::consultar_ctg(int n) const {
-    return ids[n];
+string mCategorias::consultar_nombre(int id) const {
+    return nombres[id-1];
+}
+
+int mCategorias::consultar_puntos(int id, int n) const {
+    return categorias.find(nombres[id-1])->second[n];
 }
 
 int mCategorias::numero_ctg() const {

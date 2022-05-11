@@ -19,7 +19,7 @@ class mCategorias {
     private:
 
         map<string,vector<int>> categorias;
-        vector<map<string,vector<int>>::iterator> ids;
+        vector<string> nombres;
         int size;
         int maxpuntos;
 
@@ -54,12 +54,20 @@ class mCategorias {
         */
         void escribir() const;
 
-        /** @brief Consultora por índice
+        /** @brief Consultora de nombre
+
+            \pre <em>cierto</em>
+            \post Se devuelve el nombre de la categoría de identificador id
+        */
+        string consultar_nombre(int id) const;
+
+        /** @brief Consultora de puntos
                 
             \pre <em>cierto</em>
-            \post Se devuelve el nombre de la categoría de índice n del parámetro implícito
+            \post Se devuelve la cantidad de puntos que corresponden a la posición n en la categoría
+            de identificador id
         */
-        map<string,vector<int>>::const_iterator consultar_ctg(int n) const;
+        int consultar_puntos(int id, int n) const;
 
         /** @brief Comprovación de existencia
 

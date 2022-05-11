@@ -22,14 +22,22 @@ void \mbox{\hyperlink{classmJugadores_adaeadc9fd4c34a2b380af3d4cc32ddd8}{anadir}
 \begin{DoxyCompactList}\small\item\em Añadir un jugador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmJugadores_a1b2efd062348e882863bf10911e6dfed}{baja}} (string n)
 \begin{DoxyCompactList}\small\item\em Dar de baja a un jugador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_aa10f5cde60c2f822e40f149953e0f09e}{add\+\_\+stat}} (string nombre, string stat, int val)
+\begin{DoxyCompactList}\small\item\em Añadir a atributo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmJugadores_add890872873f147e6a852ae07b033f6b}{reordenar\+\_\+rnk}} ()
+\begin{DoxyCompactList}\small\item\em Reordenar ranking. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmJugadores_a36a22073c855b28e02397f1eafb0448c}{ranking}} ()
 \begin{DoxyCompactList}\small\item\em Operación de escritura del ranking. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmJugadores_a13db4f0c75af5ed98bc62093568b1a71}{consultar\+\_\+stat}} (string nombre, string stat) const
+\begin{DoxyCompactList}\small\item\em Consultar atributo de jugador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmJugadores_aa892c0754a7188238892149eb1d02305}{consultar\+\_\+stat}} (int rank, string stat) const
+\begin{DoxyCompactList}\small\item\em Consultar atributo de jugador. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmJugadores_a1f56497cc8fa5b6d5aa1a5f1b7f07746}{consultar\+\_\+nombre}} (int rank) const
+\begin{DoxyCompactList}\small\item\em Consultar nombre de jugador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmJugadores_a8a3d2ccb4f0d7c3d29678d425893adc6}{escribir}} () const
 \begin{DoxyCompactList}\small\item\em Operación de escritura indefinida. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmJugadores_a53fba24d64486498a73cb30d82a5b312}{escribir}} (string n) const
 \begin{DoxyCompactList}\small\item\em Operación de escritura definida. \end{DoxyCompactList}\item 
-map$<$ string, \mbox{\hyperlink{classJugador}{Jugador}} $>$\+::iterator \mbox{\hyperlink{classmJugadores_a0aefcc2dd64b36f55e06104ab4d6cd0d}{consultar\+\_\+rnk}} (int i) const
-\begin{DoxyCompactList}\small\item\em Comprovación de existencia. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmJugadores_af2709e4dd211ce059fa3c3c6a38c15be}{existe}} (string n) const
 \begin{DoxyCompactList}\small\item\em Comprovación de existencia. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -73,6 +81,30 @@ Se ha creado un mapa vacío de tamaño p
 
 
 \doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classmJugadores_aa10f5cde60c2f822e40f149953e0f09e}\label{classmJugadores_aa10f5cde60c2f822e40f149953e0f09e}} 
+\index{mJugadores@{mJugadores}!add\_stat@{add\_stat}}
+\index{add\_stat@{add\_stat}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{add\_stat()}{add\_stat()}}
+{\footnotesize\ttfamily void m\+Jugadores\+::add\+\_\+stat (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{stat,  }\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+Añadir a atributo. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El atributo stat del jugador de posición de ranking rank ha pasado a tener el valor que tenía más val
+\end{DoxyPostcond}
+Añadir a atributo
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El atributo stat del jugador de nombre \char`\"{}nombre\char`\"{} ha pasado a tener el valor que tenía más val 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{classmJugadores_adaeadc9fd4c34a2b380af3d4cc32ddd8}\label{classmJugadores_adaeadc9fd4c34a2b380af3d4cc32ddd8}} 
 \index{mJugadores@{mJugadores}!anadir@{anadir}}
 \index{anadir@{anadir}!mJugadores@{mJugadores}}
@@ -105,21 +137,53 @@ Existe un jugador con identificador n en el mapa
 \begin{DoxyPostcond}{Postcondición}
 Se ha dado de baja al jugador con identificador n, y sus sucesores han subido un puesto en el ranking 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classmJugadores_a0aefcc2dd64b36f55e06104ab4d6cd0d}\label{classmJugadores_a0aefcc2dd64b36f55e06104ab4d6cd0d}} 
-\index{mJugadores@{mJugadores}!consultar\_rnk@{consultar\_rnk}}
-\index{consultar\_rnk@{consultar\_rnk}!mJugadores@{mJugadores}}
-\doxysubsubsection{\texorpdfstring{consultar\_rnk()}{consultar\_rnk()}}
-{\footnotesize\ttfamily map$<$ string, \mbox{\hyperlink{classJugador}{Jugador}} $>$\+::iterator m\+Jugadores\+::consultar\+\_\+rnk (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{classmJugadores_a1f56497cc8fa5b6d5aa1a5f1b7f07746}\label{classmJugadores_a1f56497cc8fa5b6d5aa1a5f1b7f07746}} 
+\index{mJugadores@{mJugadores}!consultar\_nombre@{consultar\_nombre}}
+\index{consultar\_nombre@{consultar\_nombre}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{consultar\_nombre()}{consultar\_nombre()}}
+{\footnotesize\ttfamily string m\+Jugadores\+::consultar\+\_\+nombre (\begin{DoxyParamCaption}\item[{int}]{rank }\end{DoxyParamCaption}) const}
 
 
 
-Comprovación de existencia. 
+Consultar nombre de jugador. 
 
 \begin{DoxyPrecond}{Precondición}
-{\itshape cierto{\itshape  }}
+{\itshape cierto} 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-{\itshape {\itshape  Se devuelve true si el jugador de nombre n existe en el circuito, o false en caso contrario }}
+Se ha devuelto el nombre del jugador de posición de ranking rank 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_aa892c0754a7188238892149eb1d02305}\label{classmJugadores_aa892c0754a7188238892149eb1d02305}} 
+\index{mJugadores@{mJugadores}!consultar\_stat@{consultar\_stat}}
+\index{consultar\_stat@{consultar\_stat}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{consultar\_stat()}{consultar\_stat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int m\+Jugadores\+::consultar\+\_\+stat (\begin{DoxyParamCaption}\item[{int}]{rank,  }\item[{string}]{stat }\end{DoxyParamCaption}) const}
+
+
+
+Consultar atributo de jugador. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha devuelto el valor del atributo stat del jugador de posición de ranking rank 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_a13db4f0c75af5ed98bc62093568b1a71}\label{classmJugadores_a13db4f0c75af5ed98bc62093568b1a71}} 
+\index{mJugadores@{mJugadores}!consultar\_stat@{consultar\_stat}}
+\index{consultar\_stat@{consultar\_stat}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{consultar\_stat()}{consultar\_stat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int m\+Jugadores\+::consultar\+\_\+stat (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{stat }\end{DoxyParamCaption}) const}
+
+
+
+Consultar atributo de jugador. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha devuelto el valor del atributo stat del jugador de nombre \char`\"{}nombre\char`\"{} 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classmJugadores_a8a3d2ccb4f0d7c3d29678d425893adc6}\label{classmJugadores_a8a3d2ccb4f0d7c3d29678d425893adc6}} 
 \index{mJugadores@{mJugadores}!escribir@{escribir}}
@@ -200,6 +264,22 @@ Operación de escritura del ranking.
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 Se ha escrito por el canal estándar de salida, en orden creciente de identificador, la posición, el nombre y las estadísticas de cada jugador del circuito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmJugadores_add890872873f147e6a852ae07b033f6b}\label{classmJugadores_add890872873f147e6a852ae07b033f6b}} 
+\index{mJugadores@{mJugadores}!reordenar\_rnk@{reordenar\_rnk}}
+\index{reordenar\_rnk@{reordenar\_rnk}!mJugadores@{mJugadores}}
+\doxysubsubsection{\texorpdfstring{reordenar\_rnk()}{reordenar\_rnk()}}
+{\footnotesize\ttfamily void m\+Jugadores\+::reordenar\+\_\+rnk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reordenar ranking. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha actualizado el ranking según los puntos de los jugadores 
 \end{DoxyPostcond}
 
 

@@ -16,10 +16,16 @@ Representa un torneo en concreto del circuito.
 \begin{DoxyCompactList}\small\item\em Creadora indefinida. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTorneo_a83f583185350607882fb72e0e7f53771}{Torneo}} (int c)
 \begin{DoxyCompactList}\small\item\em Creadora definida. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classTorneo_a4fb7c65b7735d1680dec2bdec5d0a4fd}{iniciar}} (const vector$<$ map$<$ string, \mbox{\hyperlink{classJugador}{Jugador}} $>$\+::iterator $>$ \&participantes)
+void \mbox{\hyperlink{classTorneo_a286fcaefae88536c210f379a5c9c9582}{purgar\+\_\+puntos}} (\mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&lista\+\_\+jug)
+\begin{DoxyCompactList}\small\item\em Eliminar ultimas puntuaciones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTorneo_af59e29b5da9de91b92884a637867d7d5}{iniciar}} (const \mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&lista\+\_\+jug)
 \begin{DoxyCompactList}\small\item\em Iniciar el torneo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTorneo_a2b50890028149d6f41b39ed0f7cbf564}{finalizar}} (const \mbox{\hyperlink{classmCategorias}{m\+Categorias}} \&lista\+\_\+ctg, \mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&lista\+\_\+jug)
+\begin{DoxyCompactList}\small\item\em Finalizar el torneo. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classTorneo_af179a68bff44673ac0dc9abf1ee54e98}{consultar\+\_\+ctg}} () const
-\begin{DoxyCompactList}\small\item\em Consultar categoría. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Consultar categoría. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTorneo_afe00b336849e1bc411cdb46cdf5b3bbb}{iniciado}} () const
+\begin{DoxyCompactList}\small\item\em Consultar si el torneo fue iniciado. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -77,11 +83,43 @@ Consultar categoría.
 \begin{DoxyPostcond}{Postcondición}
 Se devuelve el valor de la categoría del parámetro implícito 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classTorneo_a4fb7c65b7735d1680dec2bdec5d0a4fd}\label{classTorneo_a4fb7c65b7735d1680dec2bdec5d0a4fd}} 
+\mbox{\Hypertarget{classTorneo_a2b50890028149d6f41b39ed0f7cbf564}\label{classTorneo_a2b50890028149d6f41b39ed0f7cbf564}} 
+\index{Torneo@{Torneo}!finalizar@{finalizar}}
+\index{finalizar@{finalizar}!Torneo@{Torneo}}
+\doxysubsubsection{\texorpdfstring{finalizar()}{finalizar()}}
+{\footnotesize\ttfamily void Torneo\+::finalizar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmCategorias}{m\+Categorias}} \&}]{lista\+\_\+ctg,  }\item[{\mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&}]{lista\+\_\+jug }\end{DoxyParamCaption})}
+
+
+
+Finalizar el torneo. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha configurado y escrito el cuadro de resultados del parámetro implícito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classTorneo_afe00b336849e1bc411cdb46cdf5b3bbb}\label{classTorneo_afe00b336849e1bc411cdb46cdf5b3bbb}} 
+\index{Torneo@{Torneo}!iniciado@{iniciado}}
+\index{iniciado@{iniciado}!Torneo@{Torneo}}
+\doxysubsubsection{\texorpdfstring{iniciado()}{iniciado()}}
+{\footnotesize\ttfamily bool Torneo\+::iniciado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultar si el torneo fue iniciado. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve true si el torneo ha sido iniciado con anterioridad, y false en caso contrario 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classTorneo_af59e29b5da9de91b92884a637867d7d5}\label{classTorneo_af59e29b5da9de91b92884a637867d7d5}} 
 \index{Torneo@{Torneo}!iniciar@{iniciar}}
 \index{iniciar@{iniciar}!Torneo@{Torneo}}
 \doxysubsubsection{\texorpdfstring{iniciar()}{iniciar()}}
-{\footnotesize\ttfamily void Torneo\+::iniciar (\begin{DoxyParamCaption}\item[{const vector$<$ map$<$ string, \mbox{\hyperlink{classJugador}{Jugador}} $>$\+::iterator $>$ \&}]{participantes }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Torneo\+::iniciar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&}]{lista\+\_\+jug }\end{DoxyParamCaption})}
 
 
 
@@ -92,6 +130,22 @@ Iniciar el torneo.
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 Se ha creado y escrito el cuadro de emparejamientos del parámetro implícito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classTorneo_a286fcaefae88536c210f379a5c9c9582}\label{classTorneo_a286fcaefae88536c210f379a5c9c9582}} 
+\index{Torneo@{Torneo}!purgar\_puntos@{purgar\_puntos}}
+\index{purgar\_puntos@{purgar\_puntos}!Torneo@{Torneo}}
+\doxysubsubsection{\texorpdfstring{purgar\_puntos()}{purgar\_puntos()}}
+{\footnotesize\ttfamily void Torneo\+::purgar\+\_\+puntos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&}]{lista\+\_\+jug }\end{DoxyParamCaption})}
+
+
+
+Eliminar ultimas puntuaciones. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han eliminado los últimos puntos que ganaron los participantes de la última edición del torneo 
 \end{DoxyPostcond}
 
 

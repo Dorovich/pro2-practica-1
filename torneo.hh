@@ -12,6 +12,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <list>
 using namespace std;
 #endif
 
@@ -25,10 +26,15 @@ class Torneo {
         bool ini;
         bool debut;
         BinTree<int> cuadro;
-        vector<map<string,Jugador>::iterator> participantes;
+        vector<pair<string,int>> participantes;
+        vector<pair<string,int>> exparticipantes;
 
-        vector<int> ultimospuntos;
-        vector<string> ultimosparticipantes;
+        BinTree<int> crear_cuadro (const int &altura, const int &part, const bool conflicto, int pos, int nivel);
+        void escribir_cuadro (const BinTree<int> &c);
+        bool procesar_partido (list<string> &dt, int &wsa, int &wsb, int &wga, int &wgb);
+        BinTree<int> procesar_torneo (const BinTree<int> &c, mJugadores &lista_jug, const mCategorias &lista_ctg, list<string> &dt, int i);
+        void escribir_resultados (const BinTree<int> &r, list<string>::const_iterator it);
+        void purgar_puntos_exparticipantes (mJugadores &lista_jug);
 
     public:
 
@@ -56,7 +62,7 @@ class Torneo {
             \post Se han eliminado los últimos puntos que ganaron los participantes
             de la última edición del torneo
         */
-        void purgar_puntos();
+        void purgar_puntos(mJugadores &lista_jug);
 
         /** @brief Iniciar el torneo
                 
@@ -64,7 +70,7 @@ class Torneo {
             \post Se ha creado y escrito el cuadro de emparejamientos del parámetro
             implícito
         */
-        void iniciar(const vector<map<string,Jugador>::iterator> &p);
+        void iniciar(const mJugadores &lista_jug);
 
         /** @brief Finalizar el torneo
 

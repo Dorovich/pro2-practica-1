@@ -18,12 +18,14 @@ void \mbox{\hyperlink{classmTorneos_a4705ea37f7311c51e8645164092e4d0d}{leer}} ()
 \begin{DoxyCompactList}\small\item\em Operación de lectura. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmTorneos_a00d6509291461397bb62dbea682a3106}{anadir}} (string id, int ctg)
 \begin{DoxyCompactList}\small\item\em Añadir un torneo. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classmTorneos_adbb9e02472d0470fedc2c410050899b3}{baja}} (string id)
+void \mbox{\hyperlink{classmTorneos_a020fa6e480d2ade78a107d0e227f105d}{baja}} (string id, \mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&lista\+\_\+jug)
 \begin{DoxyCompactList}\small\item\em Dar de baja un torneo. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmTorneos_a78610452d1a5a3d347ab590d9d8b440e}{iniciar}} (string id, const \mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&lista\+\_\+jug)
 \begin{DoxyCompactList}\small\item\em Iniciar un torneo. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classmTorneos_a74676438402d5b2eb2fc038448a818e1}{escribir}} (const \mbox{\hyperlink{classmCategorias}{m\+Categorias}} \&lista\+\_\+ctg) const
+void \mbox{\hyperlink{classmTorneos_aff4473516544fc50bdbd3ece49a8649b}{finalizar}} (string id, const \mbox{\hyperlink{classmCategorias}{m\+Categorias}} \&lista\+\_\+ctg, \mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&lista\+\_\+jug)
 \begin{DoxyCompactList}\small\item\em Finalizar un torneo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmTorneos_a74676438402d5b2eb2fc038448a818e1}{escribir}} (const \mbox{\hyperlink{classmCategorias}{m\+Categorias}} \&lista\+\_\+ctg) const
+\begin{DoxyCompactList}\small\item\em Operación de escritura. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmTorneos_af5e5a0fd8d0e5507d8a870238aa9a4af}{existe}} (string s) const
 \begin{DoxyCompactList}\small\item\em Comprovación de existencia. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -67,11 +69,11 @@ Añadir un torneo.
 \begin{DoxyPostcond}{Postcondición}
 Se ha añadido un nuevo torneo con identificador de la categoría ctg a la lista 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classmTorneos_adbb9e02472d0470fedc2c410050899b3}\label{classmTorneos_adbb9e02472d0470fedc2c410050899b3}} 
+\mbox{\Hypertarget{classmTorneos_a020fa6e480d2ade78a107d0e227f105d}\label{classmTorneos_a020fa6e480d2ade78a107d0e227f105d}} 
 \index{mTorneos@{mTorneos}!baja@{baja}}
 \index{baja@{baja}!mTorneos@{mTorneos}}
 \doxysubsubsection{\texorpdfstring{baja()}{baja()}}
-{\footnotesize\ttfamily void m\+Torneos\+::baja (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void m\+Torneos\+::baja (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{\mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&}]{lista\+\_\+jug }\end{DoxyParamCaption})}
 
 
 
@@ -91,15 +93,7 @@ Se ha dado de baja el torneo con identificador id
 
 
 
-Finalizar un torneo. 
-
-\begin{DoxyPrecond}{Precondición}
-{\itshape cierto} 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
-Se ha finalizado el torneo con identificador id
-\end{DoxyPostcond}
-Operación de escritura
+Operación de escritura. 
 
 \begin{DoxyPrecond}{Precondición}
 {\itshape cierto} 
@@ -122,6 +116,22 @@ Comprovación de existencia.
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 {\itshape {\itshape  Se devuelve true si el torneo de nombre s existe en el circuito, o false en caso contrario }}
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classmTorneos_aff4473516544fc50bdbd3ece49a8649b}\label{classmTorneos_aff4473516544fc50bdbd3ece49a8649b}} 
+\index{mTorneos@{mTorneos}!finalizar@{finalizar}}
+\index{finalizar@{finalizar}!mTorneos@{mTorneos}}
+\doxysubsubsection{\texorpdfstring{finalizar()}{finalizar()}}
+{\footnotesize\ttfamily void m\+Torneos\+::finalizar (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{const \mbox{\hyperlink{classmCategorias}{m\+Categorias}} \&}]{lista\+\_\+ctg,  }\item[{\mbox{\hyperlink{classmJugadores}{m\+Jugadores}} \&}]{lista\+\_\+jug }\end{DoxyParamCaption})}
+
+
+
+Finalizar un torneo. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha finalizado el torneo con identificador id 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classmTorneos_a78610452d1a5a3d347ab590d9d8b440e}\label{classmTorneos_a78610452d1a5a3d347ab590d9d8b440e}} 
 \index{mTorneos@{mTorneos}!iniciar@{iniciar}}

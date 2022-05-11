@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iniciar_43',['iniciar',['../classmTorneos.html#a78610452d1a5a3d347ab590d9d8b440e',1,'mTorneos::iniciar()'],['../classTorneo.html#a4fb7c65b7735d1680dec2bdec5d0a4fd',1,'Torneo::iniciar()']]]
+  ['finalizar_51',['finalizar',['../classmTorneos.html#aff4473516544fc50bdbd3ece49a8649b',1,'mTorneos::finalizar()'],['../classTorneo.html#a2b50890028149d6f41b39ed0f7cbf564',1,'Torneo::finalizar()']]]
 ];

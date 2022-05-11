@@ -65,6 +65,28 @@ void mJugadores::ranking() {
     }
 }
 
+void mJugadores::add_stat(string nombre, string stat, int val) {
+    map<string,Jugador>::iterator it = jugadores.find(nombre);
+    it->second.add_stat(stat, val);
+}
+
+//  void mJugadores::add_stat(int rank, string stat, int val) {
+//      rnk[rank]->second.add_stat(stat, val);
+//  }
+
+int mJugadores::consultar_stat(string nombre, string stat) const {
+    map<string,Jugador>::const_iterator it = jugadores.find(nombre);
+    return it->second.consultar_stat(stat);
+}
+
+int mJugadores::consultar_stat(int rank, string stat) const {
+    return rnk[rank]->second.consultar_stat(stat);
+}
+
+string mJugadores::consultar_nombre(int rank) const {
+    return rnk[rank-1]->first;
+}
+
 void mJugadores::reordenar_rnk() {
     sort(rnk.begin(), rnk.end(), cmp);
     for (int i = 0; i < size; i++) rnk[i]->second.modificar_stat("rank", i+1);
@@ -100,10 +122,6 @@ void mJugadores::escribir(string s) const {
     cout << "LS:" << it->second.consultar_stat("ls") << ' ';
     cout << "WG:" << it->second.consultar_stat("wg") << ' ';
     cout << "LG:" << it->second.consultar_stat("lg") << endl;
-}
-
-map<string,Jugador>::iterator mJugadores::consultar_rnk(int i) const {
-    return rnk[i];
 }
 
 bool mJugadores::existe(string n) const {

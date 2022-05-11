@@ -20,6 +20,8 @@ Representa un jugador específico del circuito.
 \begin{DoxyCompactList}\small\item\em Creadora definida con ranking. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJugador_ae54774730f3db232f3f75bc98cf1903a}{modificar\+\_\+stat}} (string s, int p)
 \begin{DoxyCompactList}\small\item\em Modificar estadística. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJugador_a9afc782be8fec9ba002cc4c82689b399}{add\+\_\+stat}} (string s, int p)
+\begin{DoxyCompactList}\small\item\em Suma a estadística. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJugador_aebc8774b092e580d46888ade379ada33}{consultar\+\_\+stat}} (string s) const
 \begin{DoxyCompactList}\small\item\em Consultar estadística. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -79,6 +81,22 @@ Se ha creado un nuevo jugador con p puntos, ranking r y sin estadísticas
 
 
 \doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classJugador_a9afc782be8fec9ba002cc4c82689b399}\label{classJugador_a9afc782be8fec9ba002cc4c82689b399}} 
+\index{Jugador@{Jugador}!add\_stat@{add\_stat}}
+\index{add\_stat@{add\_stat}!Jugador@{Jugador}}
+\doxysubsubsection{\texorpdfstring{add\_stat()}{add\_stat()}}
+{\footnotesize\ttfamily void Jugador\+::add\+\_\+stat (\begin{DoxyParamCaption}\item[{string}]{s,  }\item[{int}]{p }\end{DoxyParamCaption})}
+
+
+
+Suma a estadística. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+La estadística s del parámetro implícito ha pasado a ser el valor que tenía más p 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{classJugador_aebc8774b092e580d46888ade379ada33}\label{classJugador_aebc8774b092e580d46888ade379ada33}} 
 \index{Jugador@{Jugador}!consultar\_stat@{consultar\_stat}}
 \index{consultar\_stat@{consultar\_stat}!Jugador@{Jugador}}

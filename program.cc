@@ -55,7 +55,7 @@ int main () {
             cin >> t;
             cout << "#" << cmd << " " << t << endl;
             if (not T.existe(t)) cout << "error: el torneo no existe" << endl;
-            else T.baja(t);
+            else T.baja(t, P);
         }
         else if (cmd == "iniciar_torneo" or cmd == "it") {
             string t;

@@ -65,6 +65,22 @@ class mJugadores {
         */
         void baja (string n);
 
+        /** @brief Añadir a atributo
+
+            \pre <em>cierto</em>
+            \post El atributo stat del jugador de posición de ranking rank ha pasado a tener
+            el valor que tenía más val
+        */
+        //void add_stat(int rank, string stat, int val);
+
+        /** @brief Añadir a atributo
+
+            \pre <em>cierto</em>
+            \post El atributo stat del jugador de nombre "nombre" ha pasado a tener
+            el valor que tenía más val
+        */
+        void add_stat(string nombre, string stat, int val);
+
         /** @brief Reordenar ranking
 
             \pre <em>cierto</em>
@@ -83,6 +99,28 @@ class mJugadores {
         */
         void ranking ();
 
+        /** @brief Consultar atributo de jugador
+
+            \pre <em>cierto</em>
+            \post Se ha devuelto el valor del atributo stat del jugador de nombre "nombre"
+        */
+        int consultar_stat(string nombre, string stat) const;
+
+        /** @brief Consultar atributo de jugador
+
+            \pre <em>cierto</em>
+            \post Se ha devuelto el valor del atributo stat del jugador de posición de
+            ranking rank
+        */
+        int consultar_stat(int rank, string stat) const;
+
+        /** @brief Consultar nombre de jugador
+
+            \pre <em>cierto</em>
+            \post Se ha devuelto el nombre del jugador de posición de ranking rank
+        */
+        string consultar_nombre(int rank) const;
+
         /** @brief Operación de escritura indefinida
                 
             \pre <em>cierto</em>
@@ -99,14 +137,6 @@ class mJugadores {
             estadísticas del jugador de identificador n del circuito
         */
         void escribir (string n) const;
-
-        /** @brief Comprovación de existencia
-
-            \pre <em>cierto<em>
-            \post Se devuelve true si el jugador de nombre n existe en el circuito, o
-            false en caso contrario
-        */
-        map<string,Jugador>::iterator consultar_rnk(int i) const;
 
         /** @brief Comprovación de existencia
 

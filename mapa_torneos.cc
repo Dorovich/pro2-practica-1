@@ -21,24 +21,16 @@ void mTorneos::anadir(string id, int ctg) {
     cout << size << endl;
 }
 
-void mTorneos::baja(string id) {
+void mTorneos::baja(string id, mJugadores &lista_jug) {
     map<string,Torneo>::iterator it = torneos.find(id);
-    if (it->second.iniciado()) it->second.purgar_puntos();
+    if (it->second.iniciado()) it->second.purgar_puntos(lista_jug);
     torneos.erase(it);
     size--;
     cout << size << endl;
 }
 
 void mTorneos::iniciar(string id, const mJugadores &lista_jug) {
-  int p;
-  cin >> p;
-  vector<map<string, Jugador>::iterator> participantes(p);
-  for (int i = 0; i < p; i++) {
-    int pos;
-    cin >> pos;
-    participantes[i] = lista_jug.consultar_rnk(pos - 1);
-  }
-  torneos[id].iniciar(participantes);
+  torneos[id].iniciar(lista_jug);
 }
 
 void mTorneos::finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug) {
@@ -50,7 +42,7 @@ void mTorneos::escribir(const mCategorias &lista_ctg) const {
     for (map<string,Torneo>::const_iterator it = torneos.begin(); it != torneos.end(); it++) {
         cout << it->first << ' ';
         int index = it->second.consultar_ctg();
-        cout << lista_ctg.consultar_ctg(index-1)->first << endl;
+        cout << lista_ctg.consultar_nombre(index) << endl;
     }
 }
 

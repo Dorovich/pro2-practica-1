@@ -86,9 +86,12 @@ Métodos públicos</h2></td></tr>
 <tr class="memitem:a8ea7052eece5329d22601aa4391c90fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmCategorias.html#a8ea7052eece5329d22601aa4391c90fb">escribir</a> () const</td></tr>
 <tr class="memdesc:a8ea7052eece5329d22601aa4391c90fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operación de escritura de categorías.  <a href="classmCategorias.html#a8ea7052eece5329d22601aa4391c90fb">Más...</a><br /></td></tr>
 <tr class="separator:a8ea7052eece5329d22601aa4391c90fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18055b3f66181c41f4e9f6077b1366b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmCategorias.html#a18055b3f66181c41f4e9f6077b1366b6">consultar_ctg</a> (int n) const</td></tr>
-<tr class="memdesc:a18055b3f66181c41f4e9f6077b1366b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultora por índice.  <a href="classmCategorias.html#a18055b3f66181c41f4e9f6077b1366b6">Más...</a><br /></td></tr>
-<tr class="separator:a18055b3f66181c41f4e9f6077b1366b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc85ebc97d69447d07fa9d46b15c525"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmCategorias.html#a3fc85ebc97d69447d07fa9d46b15c525">consultar_nombre</a> (int id) const</td></tr>
+<tr class="memdesc:a3fc85ebc97d69447d07fa9d46b15c525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultora de nombre.  <a href="classmCategorias.html#a3fc85ebc97d69447d07fa9d46b15c525">Más...</a><br /></td></tr>
+<tr class="separator:a3fc85ebc97d69447d07fa9d46b15c525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f585808192f118e64391931160042c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmCategorias.html#a7f585808192f118e64391931160042c5">consultar_puntos</a> (int id, int n) const</td></tr>
+<tr class="memdesc:a7f585808192f118e64391931160042c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultora de puntos.  <a href="classmCategorias.html#a7f585808192f118e64391931160042c5">Más...</a><br /></td></tr>
+<tr class="separator:a7f585808192f118e64391931160042c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef47e8dea0e2f64df74b3082ddd61dcb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmCategorias.html#aef47e8dea0e2f64df74b3082ddd61dcb">existe</a> (int n) const</td></tr>
 <tr class="memdesc:aef47e8dea0e2f64df74b3082ddd61dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprovación de existencia.  <a href="classmCategorias.html#aef47e8dea0e2f64df74b3082ddd61dcb">Más...</a><br /></td></tr>
 <tr class="separator:aef47e8dea0e2f64df74b3082ddd61dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,25 +135,57 @@ Métodos públicos</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentación de las funciones miembro</h2>
-<a id="a18055b3f66181c41f4e9f6077b1366b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18055b3f66181c41f4e9f6077b1366b6">&#9670;&nbsp;</a></span>consultar_ctg()</h2>
+<a id="a3fc85ebc97d69447d07fa9d46b15c525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc85ebc97d69447d07fa9d46b15c525">&#9670;&nbsp;</a></span>consultar_nombre()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string mCategorias::consultar_ctg </td>
+          <td class="memname">string mCategorias::consultar_nombre </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Consultora por índice. </p>
+<p>Consultora de nombre. </p>
 <dl class="section pre"><dt>Precondición</dt><dd><em>cierto</em> </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>Se devuelve el nombre de la categoría de índice n del parámetro implícito </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se devuelve el nombre de la categoría de identificador id </dd></dl>
+
+</div>
+</div>
+<a id="a7f585808192f118e64391931160042c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f585808192f118e64391931160042c5">&#9670;&nbsp;</a></span>consultar_puntos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mCategorias::consultar_puntos </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Consultora de puntos. </p>
+<dl class="section pre"><dt>Precondición</dt><dd><em>cierto</em> </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se devuelve la cantidad de puntos que corresponden a la posición n en la categoría de identificador id </dd></dl>
 
 </div>
 </div>

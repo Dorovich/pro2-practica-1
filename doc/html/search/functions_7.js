@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['mcategorias_46',['mCategorias',['../classmCategorias.html#a61217e429154ccb41d3fc69601cb73ec',1,'mCategorias']]],
-  ['mjugadores_47',['mJugadores',['../classmJugadores.html#a225ee1356780c76d31ba178b244e1ad2',1,'mJugadores::mJugadores()'],['../classmJugadores.html#a8f20fd298a2689f17e3780b1b8d172b3',1,'mJugadores::mJugadores(int p)']]],
-  ['modificar_5fstat_48',['modificar_stat',['../classJugador.html#ae54774730f3db232f3f75bc98cf1903a',1,'Jugador']]],
-  ['mtorneos_49',['mTorneos',['../classmTorneos.html#a909796357fa59f97a8b9196c1b419b23',1,'mTorneos']]]
+  ['leer_55',['leer',['../classmCategorias.html#a5eca73dfcda3401a606d21ffdd11f3af',1,'mCategorias::leer()'],['../classmJugadores.html#ad081723b8d8537ef243beb7b02982789',1,'mJugadores::leer()'],['../classmTorneos.html#a4705ea37f7311c51e8645164092e4d0d',1,'mTorneos::leer()']]]
 ];

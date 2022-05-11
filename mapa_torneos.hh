@@ -56,7 +56,7 @@ class mTorneos {
             \pre Existe un torneo con identificador id en la lista
             \post Se ha dado de baja el torneo con identificador id
         */
-        void baja(string id);
+        void baja(string id, mJugadores &lista_jug);
         
         /** @brief Iniciar un torneo
                 

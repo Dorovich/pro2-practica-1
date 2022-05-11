@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ranking_21',['ranking',['../classmJugadores.html#a36a22073c855b28e02397f1eafb0448c',1,'mJugadores']]]
+  ['numero_5fctg_24',['numero_ctg',['../classmCategorias.html#a9b0c180f0a1e162aef5a5332fd8b43f5',1,'mCategorias']]]
 ];
