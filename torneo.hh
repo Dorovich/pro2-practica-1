@@ -22,8 +22,13 @@ class Torneo {
     private:
         
         int categoria;
+        bool ini;
+        bool debut;
         BinTree<int> cuadro;
         vector<map<string,Jugador>::iterator> participantes;
+
+        vector<int> ultimospuntos;
+        vector<string> ultimosparticipantes;
 
     public:
 
@@ -45,6 +50,14 @@ class Torneo {
 
         // Modificadoras
         
+        /** @brief Eliminar ultimas puntuaciones
+                
+            \pre <em>cierto</em>
+            \post Se han eliminado los últimos puntos que ganaron los participantes
+            de la última edición del torneo
+        */
+        void purgar_puntos();
+
         /** @brief Iniciar el torneo
                 
             \pre <em>cierto</em>
@@ -69,6 +82,14 @@ class Torneo {
             \post Se devuelve el valor de la categoría del parámetro implícito
         */
         int consultar_ctg() const;
+
+        /** @brief Consultar si el torneo fue iniciado
+                
+            \pre <em>cierto</em>
+            \post Se devuelve true si el torneo ha sido iniciado con anterioridad, y
+            false en caso contrario
+        */
+        bool iniciado() const;
 
         // Destructora
         

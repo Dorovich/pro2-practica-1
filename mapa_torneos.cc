@@ -22,7 +22,8 @@ void mTorneos::anadir(string id, int ctg) {
 }
 
 void mTorneos::baja(string id) {
-    map<string,Torneo>::const_iterator it = torneos.find(id);
+    map<string,Torneo>::iterator it = torneos.find(id);
+    if (it->second.iniciado()) it->second.purgar_puntos();
     torneos.erase(it);
     size--;
     cout << size << endl;
