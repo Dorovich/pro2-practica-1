@@ -14,14 +14,24 @@ Torneo::Torneo(int c) {
 }
 
 void Torneo::purgar_puntos(mJugadores &lista_jug) {
-    for (int i = 0; i < participantes.size(); i++) {
-        lista_jug.add_stat(participantes[i].first, "puntos", -exparticipantes[i].second);
+    for (int i = 0; i < exparticipantes.size(); i++) {
+        lista_jug.add_stat(exparticipantes[i].first, "puntos", -exparticipantes[i].second);
     }
 }
 
+int Torneo::consultar_ctg() const {
+    return categoria;
+}
+
+bool Torneo::iniciado() const {
+    return ini;
+}
+
+Torneo::~Torneo() {}
+
 // Operaciones de inicio del torneo
 
-BinTree<int> Torneo::crear_cuadro (const int &altura, const int &part, const bool conflicto, int pos, int nivel) {
+BinTree<int> Torneo::crear_cuadro(const int &altura, const int &part, const bool conflicto, int pos, int nivel) {
     if (nivel > altura+1) return BinTree<int>();
     else if (conflicto and nivel == altura and pos <= pow(2, altura-1) - part) return BinTree<int>(pos);
     else {
@@ -30,7 +40,7 @@ BinTree<int> Torneo::crear_cuadro (const int &altura, const int &part, const boo
     }
 }
 
-void Torneo::escribir_cuadro (const BinTree<int> &c) {
+void Torneo::escribir_cuadro(const BinTree<int> &c) {
     if (not c.right().empty()) {
         cout << '(';
         escribir_cuadro(c.left());
@@ -42,7 +52,7 @@ void Torneo::escribir_cuadro (const BinTree<int> &c) {
 }
 
 void Torneo::iniciar(const mJugadores &lista_jug) {
-    ini = true;
+    if (not ini) ini = true;
     int size;
     cin >> size;
     participantes = vector<pair<string,int>> (size);
@@ -87,59 +97,59 @@ BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_ju
     int wsa, wsb, wga, wgb;
     if (not procesar_partido(dt, wsa, wsb, wga, wgb)) return BinTree<int> (c.value(), BinTree<int> (), BinTree<int> ());
 
-    BinTree<int> cleft = c.left();
-    BinTree<int> cright = c.right();
+    //BinTree<int> cleft = c.left();
+    //BinTree<int> cright = c.right();
 
-    BinTree<int> left = procesar_torneo(cleft, lista_jug, lista_ctg, dt, i+1);
-    BinTree<int> right = procesar_torneo(cright, lista_jug, lista_ctg, dt, i+1);
-    pair<string,int> a = participantes[left.value()-1];
-    pair<string,int> b = participantes[right.value()-1];
+    BinTree<int> left = procesar_torneo(c.left(), lista_jug, lista_ctg, dt, i+1);
+    BinTree<int> right = procesar_torneo(c.right(), lista_jug, lista_ctg, dt, i+1);
+    int a = left.value()-1;
+    int b = right.value()-1;
 
     if (not (wga == 0 and wgb == 1) and not (wga == 1 and wgb == 0)) {
-        lista_jug.add_stat(a.first, "ws", wsa);
-        lista_jug.add_stat(a.first, "ls", wsb);
-        lista_jug.add_stat(b.first, "ws", wsb);
-        lista_jug.add_stat(b.first, "ls", wsa);
-        lista_jug.add_stat(a.first, "wg", wga);
-        lista_jug.add_stat(a.first, "lg", wgb);
-        lista_jug.add_stat(b.first, "wg", wgb);
-        lista_jug.add_stat(b.first, "lg", wga);
+        lista_jug.add_stat(participantes[a].first, "ws", wsa);
+        lista_jug.add_stat(participantes[a].first, "ls", wsb);
+        lista_jug.add_stat(participantes[b].first, "ws", wsb);
+        lista_jug.add_stat(participantes[b].first, "ls", wsa);
+        lista_jug.add_stat(participantes[a].first, "wg", wga);
+        lista_jug.add_stat(participantes[a].first, "lg", wgb);
+        lista_jug.add_stat(participantes[b].first, "wg", wgb);
+        lista_jug.add_stat(participantes[b].first, "lg", wga);
     }
 
     int puntos = lista_ctg.consultar_puntos(categoria, i+1);
     if (wsa > wsb) {
         if (i == 0) {
             int puntosmax = lista_ctg.consultar_puntos(categoria, 0);
-            a.second += puntosmax;
-            exparticipantes[left.value()-1].second = puntosmax;
+            participantes[a].second += puntosmax;
+            exparticipantes[a].second = puntosmax;
         }
-        b.second += puntos;
-        exparticipantes[right.value()-1].second = puntos;
+        participantes[b].second += puntos;
+        exparticipantes[b].second = puntos;
 
-        lista_jug.add_stat(a.first, "wm", 1);
-        lista_jug.add_stat(b.first, "lm", 1);
+        lista_jug.add_stat(participantes[a].first, "wm", 1);
+        lista_jug.add_stat(participantes[b].first, "lm", 1);
 
         //gana el jugador izquierdo
-        return BinTree<int> (left.value(), left, right);
+        return BinTree<int> (a+1, left, right);
     }
     else {
         if (i == 0) {
             int puntosmax = lista_ctg.consultar_puntos(categoria, 0);
-            b.second += puntosmax;
-            exparticipantes[right.value()-1].second = puntosmax;
+            participantes[b].second += puntosmax;
+            exparticipantes[b].second = puntosmax;
         }
-        a.second += puntos;
-        exparticipantes[left.value()-1].second = puntos;
+        participantes[a].second += puntos;
+        exparticipantes[a].second = puntos;
 
-        lista_jug.add_stat(a.first, "lm", 1);
-        lista_jug.add_stat(b.first, "wm", 1);
+        lista_jug.add_stat(participantes[a].first, "lm", 1);
+        lista_jug.add_stat(participantes[b].first, "wm", 1);
 
         //gana el jugador derecho
-        return BinTree<int> (right.value(), left, right);
+        return BinTree<int> (b+1, left, right);
     }
 }
 
-void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::const_iterator it) {
+void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::iterator &it) {
     if (r.right().empty()) return;
     int a = r.left().value(), b = r.right().value();
     cout << '(';
@@ -153,23 +163,10 @@ void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::const_ite
     cout << ')';
 }
 
-void Torneo::purgar_puntos_exparticipantes(mJugadores &lista_jug) {
-    for (int i = 0; i < exparticipantes.size(); i++) {
-        if (lista_jug.existe(exparticipantes[i].first)) {
-            bool found = false;
-            int j = 0;
-            while (not found and j < participantes.size()) {
-                found = exparticipantes[i].first == participantes[j].first;
-                j++;
-            }
-            if (found) lista_jug.add_stat(participantes[j-1].first, "puntos", -exparticipantes[i].second);
-        }
-    }
-}
-
 void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
     //si el torneo no debuta, borrar puntos anteriores de los jugadores repetidos
-    if (not debut) purgar_puntos_exparticipantes(lista_jug);
+    if (debut) debut = false;
+    else purgar_puntos(lista_jug);
 
     //inicializar vector de puntos, datos y cuadro de resultados
     //y tambien exparticipantes (si los hubiera ya san sido comprovados)
@@ -177,11 +174,9 @@ void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
     exparticipantes = vector<pair<string,int>> (participantes.size());
     BinTree<int> resultados = procesar_torneo(cuadro, lista_jug, lista_ctg, datos, 0);
 
-    //reordenar ranking
-    lista_jug.reordenar_rnk();
-
     //escribir arbol de resultados
-    escribir_resultados(resultados, datos.begin());
+    list<string>::iterator it = datos.begin();
+    escribir_resultados(resultados, it);
     cout << endl;
 
     //actualizar exparticipantes
@@ -196,15 +191,6 @@ void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
         cout << i+1 << '.' << participantes[i].first << ' ' << participantes[i].second << endl;
     }
 
-    debut = false;
+    //reordenar ranking despues de añadir puntos
+    lista_jug.reordenar_rnk();
 }
-
-int Torneo::consultar_ctg() const {
-    return categoria;
-}
-
-bool Torneo::iniciado() const {
-    return ini;
-}
-
-Torneo::~Torneo() {}

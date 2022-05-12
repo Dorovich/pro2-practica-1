@@ -68,14 +68,6 @@ class mJugadores {
         /** @brief Añadir a atributo
 
             \pre <em>cierto</em>
-            \post El atributo stat del jugador de posición de ranking rank ha pasado a tener
-            el valor que tenía más val
-        */
-        //void add_stat(int rank, string stat, int val);
-
-        /** @brief Añadir a atributo
-
-            \pre <em>cierto</em>
             \post El atributo stat del jugador de nombre "nombre" ha pasado a tener
             el valor que tenía más val
         */

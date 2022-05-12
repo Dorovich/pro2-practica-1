@@ -33,8 +33,7 @@ class Torneo {
         void escribir_cuadro (const BinTree<int> &c);
         bool procesar_partido (list<string> &dt, int &wsa, int &wsb, int &wga, int &wgb);
         BinTree<int> procesar_torneo (const BinTree<int> &c, mJugadores &lista_jug, const mCategorias &lista_ctg, list<string> &dt, int i);
-        void escribir_resultados (const BinTree<int> &r, list<string>::const_iterator it);
-        void purgar_puntos_exparticipantes (mJugadores &lista_jug);
+        void escribir_resultados (const BinTree<int> &r, list<string>::iterator &it);
 
     public:
 

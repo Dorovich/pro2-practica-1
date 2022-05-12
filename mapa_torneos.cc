@@ -30,7 +30,7 @@ void mTorneos::baja(string id, mJugadores &lista_jug) {
 }
 
 void mTorneos::iniciar(string id, const mJugadores &lista_jug) {
-  torneos[id].iniciar(lista_jug);
+    torneos[id].iniciar(lista_jug);
 }
 
 void mTorneos::finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug) {
