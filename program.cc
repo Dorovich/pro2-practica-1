@@ -48,7 +48,10 @@ int main () {
             cin >> p;
             cout << "#" << cmd << " " << p << endl;
             if (not P.existe(p)) cout << "error: el jugador no existe" << endl;
-            else P.baja(p);
+            else {
+                T.purgar_jugador(p);
+                P.baja(p);
+            }
         }
         else if (cmd == "baja_torneo" or cmd == "bt") {
             string t;

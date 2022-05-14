@@ -5,9 +5,8 @@
 #ifndef MAPA_TORNEOS_HH
 #define MAPA_TORNEOS_HH
 
-#include "mapa_categorias.hh"
-#include "mapa_jugadores.hh"
 #include "torneo.hh"
+#include "mapa_jugadores.hh"
 #ifndef NO_DIAGRAM
 #include <map>
 #include <iostream>
@@ -57,7 +56,15 @@ class mTorneos {
             \post Se ha dado de baja el torneo con identificador id
         */
         void baja(string id, mJugadores &lista_jug);
-        
+
+        /** @brief Eliminar datos de un jugador
+
+            \pre <em>cierto</em>
+            \post Se han eliminado los datos del jugador de nombre "nombre" de los
+            registros de todos los torneos
+        */
+        void purgar_jugador(string nombre);
+
         /** @brief Iniciar un torneo
                 
             \pre <em>cierto</em>

@@ -19,6 +19,21 @@ void Torneo::purgar_puntos(mJugadores &lista_jug) {
     }
 }
 
+void Torneo::purgar_jugador(string nombre) {
+    if (not ini) return;
+
+    bool found;
+    int i = 0;
+    while (not found and i < exparticipantes.size()) {
+        found = exparticipantes[i].first == nombre;
+        if (found) {
+            exparticipantes[i].first = "";
+            exparticipantes[i].second = 0;
+        }
+        i++;
+    }
+}
+
 int Torneo::consultar_ctg() const {
     return categoria;
 }

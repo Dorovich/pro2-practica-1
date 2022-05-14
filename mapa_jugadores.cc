@@ -1,5 +1,4 @@
 #include "mapa_jugadores.hh"
-#include "jugador.hh"
 #include <list>
 #include <algorithm>
 

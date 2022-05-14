@@ -1,5 +1,4 @@
 #include "mapa_torneos.hh"
-#include "mapa_jugadores.hh"
 #include <vector>
 
 mTorneos::mTorneos(int t) {
@@ -27,6 +26,12 @@ void mTorneos::baja(string id, mJugadores &lista_jug) {
     torneos.erase(it);
     size--;
     cout << size << endl;
+    lista_jug.reordenar_rnk();
+}
+
+void mTorneos::purgar_jugador(string nombre) {
+    map<string,Torneo>::iterator it;
+    for (it = torneos.begin(); it != torneos.end(); it++) it->second.purgar_jugador(nombre);
 }
 
 void mTorneos::iniciar(string id, const mJugadores &lista_jug) {

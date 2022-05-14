@@ -5,8 +5,8 @@
 #ifndef TORNEO_HH
 #define TORNEO_HH
 
-#include "mapa_jugadores.hh"
 #include "mapa_categorias.hh"
+#include "mapa_jugadores.hh"
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
 #include <iostream>
@@ -62,6 +62,14 @@ class Torneo {
             de la última edición del torneo
         */
         void purgar_puntos(mJugadores &lista_jug);
+
+        /** @brief Eliminar datos de un jugador
+
+            \pre <em>cierto</em>
+            \post Se han eliminado del registro de jugadores de la edición anterior
+            al jugador de nombre "nombre"
+        */
+        void purgar_jugador(string nombre);
 
         /** @brief Iniciar el torneo
                 
