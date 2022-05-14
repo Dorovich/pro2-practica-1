@@ -8,20 +8,21 @@ reset=$(tput sgr0)
 
 if [ -f ./program.exe ];
 then
-    echo "${bold}${info}program compiled, rebuilding executable...${reset}"
-    rm program.exe
-else
-    echo "${bold}${info}compiling program...${reset}"
-fi
-
-make
-
-if [ -f ./program.exe ];
-then
     echo "${bold}${info}executing program...${reset}"
     ./program.exe < runfiles/final_inp.txt > runfiles/out.txt 
     echo "${bold}${noerror}comparing results...${reset}"
     meld runfiles/out.txt runfiles/final_out.txt
 else
-    echo "${bold}${error}program did not compile...${reset}"
+    echo "${bold}${info}compiling program...${reset}"
+    make
+
+    if [ -f ./program.exe ];
+    then
+        echo "${bold}${info}executing program...${reset}"
+        ./program.exe < runfiles/final_inp.txt > runfiles/out.txt 
+        echo "${bold}${noerror}comparing results...${reset}"
+        meld runfiles/out.txt runfiles/final_out.txt
+    else
+        echo "${bold}${error}program did not compile...${reset}"
+    fi
 fi
