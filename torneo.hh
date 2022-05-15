@@ -69,7 +69,7 @@ class Torneo {
             \post Se han eliminado del registro de jugadores de la edición anterior
             al jugador de nombre "nombre"
         */
-        void purgar_jugador(string nombre);
+        void purgar_jugador(const string &nombre);
 
         /** @brief Iniciar el torneo
                 

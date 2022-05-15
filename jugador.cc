@@ -18,7 +18,7 @@ Jugador::Jugador(int p, int r) {
     ts = wm = lm = ws = ls = wg = lg = 0;
 }
 
-int Jugador::consultar_stat(string s) const {
+int Jugador::consultar_stat(const string &s) const {
     if (s == "puntos") return puntos;
     if (s == "rank") return rank;
     if (s == "ts") return ts;
@@ -31,7 +31,7 @@ int Jugador::consultar_stat(string s) const {
     return 0;
 }
 
-void Jugador::modificar_stat(string s, int p) {
+void Jugador::modificar_stat(const string &s, int p) {
     if (s == "puntos") puntos = p;
     else if (s == "rank") rank = p;
     else if (s == "ts") ts = p;
@@ -44,7 +44,7 @@ void Jugador::modificar_stat(string s, int p) {
     return;
 }
 
-void Jugador::add_stat(string s, int p) {
+void Jugador::add_stat(const string &s, int p) {
     if (s == "puntos") puntos += p;
     else if (s == "rank") rank += p;
     else if (s == "ts") ts += p;

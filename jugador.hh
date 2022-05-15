@@ -62,7 +62,7 @@ class Jugador {
             \pre <em>cierto</em>
             \post La estadística s del parámetro implícito ha pasado a ser p
         */
-        void modificar_stat (string s, int p);
+        void modificar_stat (const string &s, int p);
 
         /** @brief Suma a estadística
 
@@ -70,7 +70,7 @@ class Jugador {
             \post La estadística s del parámetro implícito ha pasado a ser el valor que
             tenía más p
         */
-        void add_stat (string s, int p);
+        void add_stat (const string &s, int p);
         
         // Consultoras
         
@@ -79,7 +79,7 @@ class Jugador {
             \pre <em>cierto</em>
             \post Se devuelve el valor de la estadística s del parámetro implícito
         */
-        int consultar_stat(string s) const;
+        int consultar_stat(const string &s) const;
         
         // Destructoras
         

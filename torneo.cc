@@ -19,7 +19,7 @@ void Torneo::purgar_puntos(mJugadores &lista_jug) {
     }
 }
 
-void Torneo::purgar_jugador(string nombre) {
+void Torneo::purgar_jugador(const string &nombre) {
     if (not ini) return;
 
     bool found;
@@ -99,9 +99,11 @@ bool Torneo::procesar_partido(list<string> &dt, int &wsa, int &wsb, int &wga, in
     wga = wgb = 0;
     int i = 0;
     while (i < dts.size()) {
-        wga += (int)dts[i]-48;
-        wgb += (int)dts[i+2]-48;
-        if ((int)dts[i] > (int)dts[i+2]) wsa++;
+        int g_a = (int)dts[i]-48;
+        int g_b = (int)dts[i+2]-48;
+        wga += g_a;
+        wgb += g_b;
+        if (g_a > g_b) wsa++;
         else wsb++;
         i += 4;
     }
@@ -111,9 +113,6 @@ bool Torneo::procesar_partido(list<string> &dt, int &wsa, int &wsb, int &wga, in
 BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_jug, const mCategorias &lista_ctg, list<string> &dt, int i) {
     int wsa, wsb, wga, wgb;
     if (not procesar_partido(dt, wsa, wsb, wga, wgb)) return BinTree<int> (c.value(), BinTree<int> (), BinTree<int> ());
-
-    //BinTree<int> cleft = c.left();
-    //BinTree<int> cright = c.right();
 
     BinTree<int> left = procesar_torneo(c.left(), lista_jug, lista_ctg, dt, i+1);
     BinTree<int> right = procesar_torneo(c.right(), lista_jug, lista_ctg, dt, i+1);
@@ -131,8 +130,9 @@ BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_ju
         lista_jug.add_stat(participantes[b].first, "lg", wga);
     }
 
-    int puntos = lista_ctg.consultar_puntos(categoria, i+1);
+    int winner, puntos = lista_ctg.consultar_puntos(categoria, i+1);
     if (wsa > wsb) {
+        winner = a+1;
         if (i == 0) {
             int puntosmax = lista_ctg.consultar_puntos(categoria, 0);
             participantes[a].second += puntosmax;
@@ -143,11 +143,9 @@ BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_ju
 
         lista_jug.add_stat(participantes[a].first, "wm", 1);
         lista_jug.add_stat(participantes[b].first, "lm", 1);
-
-        //gana el jugador izquierdo
-        return BinTree<int> (a+1, left, right);
     }
     else {
+        winner = b+1;
         if (i == 0) {
             int puntosmax = lista_ctg.consultar_puntos(categoria, 0);
             participantes[b].second += puntosmax;
@@ -158,10 +156,9 @@ BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_ju
 
         lista_jug.add_stat(participantes[a].first, "lm", 1);
         lista_jug.add_stat(participantes[b].first, "wm", 1);
-
-        //gana el jugador derecho
-        return BinTree<int> (b+1, left, right);
     }
+
+    return BinTree<int> (winner, left, right);
 }
 
 void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::iterator &it) {
