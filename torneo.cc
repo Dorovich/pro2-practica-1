@@ -171,7 +171,7 @@ void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::iterator 
     cout << a << '.' << participantes[a-1].first;
     cout << " vs ";
     cout << b << '.' << participantes[b-1].first;
-    cout << " " << *it;
+    cout << ' ' << *it;
     ++it;
     escribir_resultados(r.left(), it);
     escribir_resultados(r.right(), it);

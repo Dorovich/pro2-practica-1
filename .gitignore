@@ -2,8 +2,7 @@
 *.d
 
 # Compiled Object files
-*.slo
-*.lo
+*.slo *.lo
 *.o
 *.obj
 
@@ -36,3 +35,4 @@ doc
 
 # Otros
 bak
+*.tar
