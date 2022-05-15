@@ -6,7 +6,7 @@ info=$(tput setaf 3)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
-data="execution time: \t%E \ntotal page faults: \tmajor: %F, minor: %R \naverage mem (kb): \t%K"
+data="real time: \t%E \nuser time: \t%U \nsystem time: \t%S \npage faults: \tmajor: %F, minor: %R \nmemory (kb): \t%K"
 
 echo "${bold}${info}compiling modifications...${reset}"
 make
