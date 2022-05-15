@@ -6,12 +6,14 @@ info=$(tput setaf 3)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
+data="execution time: \t%E \ntotal page faults: \tmajor: %F, minor: %R \naverage mem (kb): \t%K"
+
 echo "${bold}${info}compiling modifications...${reset}"
 make
 if [ -f ./program.exe ];
 then
     echo "${bold}${info}executing program...${reset}"
-    ./program.exe < runfiles/final_inp.txt > runfiles/out.txt 
+    time -f "${data}" ./program.exe < runfiles/final_inp.txt > runfiles/out.txt
     echo "${bold}${noerror}comparing results...${reset}"
     meld runfiles/out.txt runfiles/final_out.txt
 else
