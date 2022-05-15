@@ -33,6 +33,10 @@ int mCategorias::consultar_puntos(int id, int n) const {
     return categorias.find(nombres[id-1])->second[n];
 }
 
+int mCategorias::cantidad_puntos() const {
+    return categorias.begin()->second.size();
+}
+
 int mCategorias::numero_ctg() const {
     return size;
 }

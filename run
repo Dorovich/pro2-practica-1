@@ -10,8 +10,7 @@ data="real time: \t%E \nuser time: \t%U \nsystem time: \t%S \npage faults: \tmaj
 
 echo "${bold}${info}compiling modifications...${reset}"
 make
-if [ -f ./program.exe ];
-then
+if [ -f program.exe ]; then
     echo "${bold}${info}executing program...${reset}"
     time -f "${data}" ./program.exe < runfiles/final_inp.txt > runfiles/out.txt
     echo "${bold}${noerror}comparing results...${reset}"

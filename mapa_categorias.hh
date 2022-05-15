@@ -69,6 +69,13 @@ class mCategorias {
         */
         int consultar_puntos(int id, int n) const;
 
+        /** @brief Consultora de cantidad de puntos
+                
+            \pre <em>cierto</em>
+            \post Se devuelve la cantidad de posiciones puntuables de la categoría
+        */
+        int cantidad_puntos() const;
+
         /** @brief Comprovación de existencia
 
             \pre <em>cierto<em>

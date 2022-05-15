@@ -72,6 +72,7 @@ nuevo_jugador Duckworth
 nj Bublik
 consultar_jugador Nadal
 cj Popyrin
+bj Paire
 it Cincinnati
 32
  1 2 3 7 8 9 10 11 12 14 16 18 19 21 22 23
@@ -80,16 +81,11 @@ nj Popyrin
 nuevo_torneo Casablanca 5
 nt Casablanca 4
 nt Estoril 4
-baja_jugador Thiem
+baja_jugador Duckworth
 bj Bonzi
 baja_torneo Kiev
 bt Estoril
 listar_torneos
 listar_ranking
 listar_jugadores
-nj Vido
-nj Pepe
-nj Calvo
-lr
 fin
-

@@ -15,22 +15,22 @@ Torneo::Torneo(int c) {
 
 void Torneo::purgar_puntos(mJugadores &lista_jug) {
     for (int i = 0; i < exparticipantes.size(); i++) {
-        lista_jug.add_stat(exparticipantes[i].first, "puntos", -exparticipantes[i].second);
+        if (exparticipantes[i].second != -1) lista_jug.add_stat(exparticipantes[i].first, "puntos", -exparticipantes[i].second);
     }
 }
 
 void Torneo::purgar_jugador(const string &nombre) {
     if (not ini) return;
 
-    bool found;
+    bool found = false;
     int i = 0;
     while (not found and i < exparticipantes.size()) {
         found = exparticipantes[i].first == nombre;
-        if (found) {
-            exparticipantes[i].first = "";
-            exparticipantes[i].second = 0;
-        }
         i++;
+    }
+    if (found) {
+        exparticipantes[i-1].first = "";
+        exparticipantes[i-1].second = -1;
     }
 }
 
@@ -66,16 +66,18 @@ void Torneo::escribir_cuadro(const BinTree<int> &c) {
     else cout << c.value() << '.' << participantes[c.value()-1].first;
 }
 
-void Torneo::iniciar(const mJugadores &lista_jug) {
+void Torneo::iniciar(mJugadores &lista_jug) {
     if (not ini) ini = true;
+
     int size;
     cin >> size;
+
     participantes = vector<pair<string,int>> (size);
     for (int i = 0; i < size; i++) {
         int pos;
         cin >> pos;
         participantes[i].first = lista_jug.consultar_nombre(pos);
-        participantes[i].second = 0;
+        participantes[i].second = -1;
     }
 
     int altura = 1+ceil(log2(size));
@@ -129,35 +131,31 @@ BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_ju
         lista_jug.add_stat(participantes[b].first, "wg", wgb);
         lista_jug.add_stat(participantes[b].first, "lg", wga);
     }
+    
+    //comprovar si la posicion es puntuable
+    if (i+1 <= lista_ctg.cantidad_puntos()) {
+        if (wsa > wsb) {
+            if (i == 0) participantes[a].second = lista_ctg.consultar_puntos(categoria, 0);
+            participantes[b].second = lista_ctg.consultar_puntos(categoria, i+1);
+        }
+        else {
+            if (i == 0) participantes[b].second = lista_ctg.consultar_puntos(categoria, 0);
+            participantes[a].second = lista_ctg.consultar_puntos(categoria, i+1);
+        }
+    }
 
-    int winner, puntos = lista_ctg.consultar_puntos(categoria, i+1);
+    //decidir ganador
+    int winner;
     if (wsa > wsb) {
         winner = a+1;
-        if (i == 0) {
-            int puntosmax = lista_ctg.consultar_puntos(categoria, 0);
-            participantes[a].second += puntosmax;
-            exparticipantes[a].second = puntosmax;
-        }
-        participantes[b].second += puntos;
-        exparticipantes[b].second = puntos;
-
         lista_jug.add_stat(participantes[a].first, "wm", 1);
         lista_jug.add_stat(participantes[b].first, "lm", 1);
     }
     else {
         winner = b+1;
-        if (i == 0) {
-            int puntosmax = lista_ctg.consultar_puntos(categoria, 0);
-            participantes[b].second += puntosmax;
-            exparticipantes[b].second = puntosmax;
-        }
-        participantes[a].second += puntos;
-        exparticipantes[a].second = puntos;
-
         lista_jug.add_stat(participantes[a].first, "lm", 1);
         lista_jug.add_stat(participantes[b].first, "wm", 1);
     }
-
     return BinTree<int> (winner, left, right);
 }
 
@@ -176,33 +174,26 @@ void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::iterator 
 }
 
 void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
-    //si el torneo no debuta, borrar puntos anteriores de los jugadores repetidos
     if (debut) debut = false;
     else purgar_puntos(lista_jug);
 
-    //inicializar vector de puntos, datos y cuadro de resultados
-    //y tambien exparticipantes (si los hubiera ya san sido comprovados)
     list<string> datos;
-    exparticipantes = vector<pair<string,int>> (participantes.size());
     BinTree<int> resultados = procesar_torneo(cuadro, lista_jug, lista_ctg, datos, 0);
 
-    //escribir arbol de resultados
     list<string>::iterator it = datos.begin();
     escribir_resultados(resultados, it);
     cout << endl;
 
-    //actualizar exparticipantes
-    //sumar puntos ganados
-    //contar participacion en el torneo
-    //escribir los puntos ganados
+    exparticipantes = vector<pair<string,int>> (participantes.size());
     for (int i = 0; i < participantes.size(); i++) {
         exparticipantes[i].first = participantes[i].first;
         exparticipantes[i].second = participantes[i].second;
-        lista_jug.add_stat(participantes[i].first, "puntos", participantes[i].second);
         lista_jug.add_stat(participantes[i].first, "ts", 1);
-        cout << i+1 << '.' << participantes[i].first << ' ' << participantes[i].second << endl;
+        if (participantes[i].second != -1) {
+            lista_jug.add_stat(participantes[i].first, "puntos", participantes[i].second);
+            cout << i+1 << '.' << participantes[i].first << ' ' << participantes[i].second << endl;
+        }
     }
 
-    //reordenar ranking despues de añadir puntos
     lista_jug.reordenar_rnk();
 }

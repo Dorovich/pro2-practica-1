@@ -14,13 +14,13 @@ void mTorneos::leer() {
     }
 }
 
-void mTorneos::anadir(string id, int ctg) {
+void mTorneos::anadir(const string &id, int ctg) {
     torneos[id] = Torneo(ctg);
     size++;
     cout << size << endl;
 }
 
-void mTorneos::baja(string id, mJugadores &lista_jug) {
+void mTorneos::baja(const string &id, mJugadores &lista_jug) {
     map<string,Torneo>::iterator it = torneos.find(id);
     if (it->second.iniciado()) it->second.purgar_puntos(lista_jug);
     torneos.erase(it);
@@ -29,16 +29,16 @@ void mTorneos::baja(string id, mJugadores &lista_jug) {
     lista_jug.reordenar_rnk();
 }
 
-void mTorneos::purgar_jugador(string nombre) {
+void mTorneos::purgar_jugador(const string &nombre) {
     map<string,Torneo>::iterator it;
     for (it = torneos.begin(); it != torneos.end(); it++) it->second.purgar_jugador(nombre);
 }
 
-void mTorneos::iniciar(string id, const mJugadores &lista_jug) {
+void mTorneos::iniciar(const string &id, mJugadores &lista_jug) {
     torneos[id].iniciar(lista_jug);
 }
 
-void mTorneos::finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug) {
+void mTorneos::finalizar(const string &id, const mCategorias &lista_ctg, mJugadores &lista_jug) {
     torneos[id].finalizar(lista_ctg, lista_jug);
 }
 
@@ -51,7 +51,7 @@ void mTorneos::escribir(const mCategorias &lista_ctg) const {
     }
 }
 
-bool mTorneos::existe(string s) const {
+bool mTorneos::existe(const string &s) const {
     return torneos.end() != torneos.find(s);
 }
 

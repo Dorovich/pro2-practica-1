@@ -48,14 +48,14 @@ class mTorneos {
             \post Se ha añadido un nuevo torneo con identificador de la categoría ctg a
             la lista
         */
-        void anadir(string id, int ctg);
+        void anadir(const string &id, int ctg);
         
         /** @brief Dar de baja un torneo
                 
             \pre Existe un torneo con identificador id en la lista
             \post Se ha dado de baja el torneo con identificador id
         */
-        void baja(string id, mJugadores &lista_jug);
+        void baja(const string &id, mJugadores &lista_jug);
 
         /** @brief Eliminar datos de un jugador
 
@@ -63,21 +63,21 @@ class mTorneos {
             \post Se han eliminado los datos del jugador de nombre "nombre" de los
             registros de todos los torneos
         */
-        void purgar_jugador(string nombre);
+        void purgar_jugador(const string &nombre);
 
         /** @brief Iniciar un torneo
                 
             \pre <em>cierto</em>
             \post Se ha iniciado el torneo con identificador id
         */
-        void iniciar(string id, const mJugadores &lista_jug);
+        void iniciar(const string &id, mJugadores &lista_jug);
         
         /** @brief Finalizar un torneo
                 
             \pre <em>cierto</em>
             \post Se ha finalizado el torneo con identificador id
         */
-        void finalizar(string id, const mCategorias &lista_ctg, mJugadores &lista_jug);
+        void finalizar(const string &id, const mCategorias &lista_ctg, mJugadores &lista_jug);
         
         // Consultoras
         
@@ -95,7 +95,7 @@ class mTorneos {
             \post Se devuelve true si el torneo de nombre s existe en el circuito, o
             false en caso contrario
         */
-        bool existe(string s) const;
+        bool existe(const string &s) const;
         
         // Destructora
         

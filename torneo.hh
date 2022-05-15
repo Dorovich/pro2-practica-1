@@ -77,7 +77,7 @@ class Torneo {
             \post Se ha creado y escrito el cuadro de emparejamientos del parámetro
             implícito
         */
-        void iniciar(const mJugadores &lista_jug);
+        void iniciar(mJugadores &lista_jug);
 
         /** @brief Finalizar el torneo
 
