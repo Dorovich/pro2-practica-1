@@ -15,7 +15,7 @@ Torneo::Torneo(int c) {
 
 void Torneo::purgar_puntos(mJugadores &lista_jug) {
     for (int i = 0; i < exparticipantes.size(); i++) {
-        if (exparticipantes[i].second != -1) lista_jug.add_stat(exparticipantes[i].first, "puntos", -exparticipantes[i].second);
+        if (exparticipantes[i].second != 0) lista_jug.add_stat(exparticipantes[i].first, "puntos", -exparticipantes[i].second);
     }
 }
 
@@ -30,7 +30,7 @@ void Torneo::purgar_jugador(const string &nombre) {
     }
     if (found) {
         exparticipantes[i-1].first = "";
-        exparticipantes[i-1].second = -1;
+        exparticipantes[i-1].second = 0;
     }
 }
 
@@ -77,7 +77,7 @@ void Torneo::iniciar(mJugadores &lista_jug) {
         int pos;
         cin >> pos;
         participantes[i].first = lista_jug.consultar_nombre(pos);
-        participantes[i].second = -1;
+        participantes[i].second = 0;
     }
 
     int altura = 1+ceil(log2(size));
@@ -189,8 +189,8 @@ void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
         exparticipantes[i].first = participantes[i].first;
         exparticipantes[i].second = participantes[i].second;
         lista_jug.add_stat(participantes[i].first, "ts", 1);
-        if (participantes[i].second != -1) {
-            lista_jug.add_stat(participantes[i].first, "puntos", participantes[i].second);
+        lista_jug.add_stat(participantes[i].first, "puntos", participantes[i].second);
+        if (participantes[i].second != 0) {
             cout << i+1 << '.' << participantes[i].first << ' ' << participantes[i].second << endl;
         }
     }

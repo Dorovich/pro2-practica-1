@@ -42,7 +42,7 @@ int mCategorias::numero_ctg() const {
 }
 
 bool mCategorias::existe(int n) const {
-    return (n <= size and n > 0);
+    return (n > 0 and n <= size);
 }
 
 mCategorias::~mCategorias() {}

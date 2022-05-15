@@ -48,12 +48,7 @@ void mJugadores::baja(string n) {
 bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b) {
     int puntos_a = a->second.consultar_stat("puntos");
     int puntos_b = b->second.consultar_stat("puntos");
-    int rank_a = a->second.consultar_stat("rank");
-    int rank_b = b->second.consultar_stat("rank");
-
-    if (puntos_a > puntos_b) return true;
-    else if (puntos_a == puntos_b and rank_a < rank_b) return true;
-    return false;
+    return puntos_a > puntos_b;
 }
 
 void mJugadores::ranking() {
@@ -72,7 +67,8 @@ void mJugadores::add_stat(string nombre, string stat, int val) {
 
 int mJugadores::consultar_stat(string nombre, string stat) const {
     map<string,Jugador>::const_iterator it = jugadores.find(nombre);
-    return it->second.consultar_stat(stat);
+    if (it != jugadores.end()) return it->second.consultar_stat(stat);
+    else return 0;
 }
 
 int mJugadores::consultar_stat(int rank, string stat) const {
@@ -84,7 +80,7 @@ string mJugadores::consultar_nombre(int rank) const {
 }
 
 void mJugadores::reordenar_rnk() {
-    sort(rnk.begin(), rnk.end(), cmp);
+    stable_sort(rnk.begin(), rnk.end(), cmp);
     for (int i = 0; i < size; i++) rnk[i]->second.modificar_stat("rank", i+1);
 }
 
