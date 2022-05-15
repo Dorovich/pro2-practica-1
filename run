@@ -6,31 +6,14 @@ info=$(tput setaf 3)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
+echo "${bold}${info}compiling modifications...${reset}"
+make
 if [ -f ./program.exe ];
 then
-    echo "${bold}${info}compiling modifications...${reset}"
-    make
-
-    if [ -f ./program.exe ];
-    then
-        echo "${bold}${info}executing program...${reset}"
-        ./program.exe < runfiles/final_inp.txt > runfiles/out.txt 
-        echo "${bold}${noerror}comparing results...${reset}"
-        meld runfiles/out.txt runfiles/final_out.txt
-    else
-        echo "${bold}${error}program did not compile...${reset}"
-    fi
+    echo "${bold}${info}executing program...${reset}"
+    ./program.exe < runfiles/final_inp.txt > runfiles/out.txt 
+    echo "${bold}${noerror}comparing results...${reset}"
+    meld runfiles/out.txt runfiles/final_out.txt
 else
-    echo "${bold}${info}compiling program...${reset}"
-    make
-
-    if [ -f ./program.exe ];
-    then
-        echo "${bold}${info}executing program...${reset}"
-        ./program.exe < runfiles/final_inp.txt > runfiles/out.txt 
-        echo "${bold}${noerror}comparing results...${reset}"
-        meld runfiles/out.txt runfiles/final_out.txt
-    else
-        echo "${bold}${error}program did not compile...${reset}"
-    fi
+    echo "${bold}${error}program did not compile...${reset}"
 fi
