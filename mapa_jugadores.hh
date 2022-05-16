@@ -23,6 +23,14 @@ class mJugadores {
         map<string,Jugador> jugadores;
         int size;
 
+        /** @brief Operación de comparación
+                
+            \pre <em>cierto</em>
+            \post Se ha devuelto true si los puntos del jugador al que apunta a
+            son superiores a los del que apunta b
+        */
+        bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b);
+
     public:
         
         // Creadoras

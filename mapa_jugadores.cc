@@ -45,7 +45,7 @@ void mJugadores::baja(const string &n) {
     cout << size << endl;
 }
 
-bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b) {
+bool mJugadores::cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b) {
     int puntos_a = a->second.consultar_stat("puntos");
     int puntos_b = b->second.consultar_stat("puntos");
     return puntos_a > puntos_b;
