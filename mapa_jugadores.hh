@@ -29,7 +29,7 @@ class mJugadores {
             \post Se ha devuelto true si los puntos del jugador al que apunta a
             son superiores a los del que apunta b
         */
-        bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b);
+        static bool cmp (map<string,Jugador>::const_iterator a, map<string,Jugador>::const_iterator b);
 
     public:
         

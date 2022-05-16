@@ -131,14 +131,14 @@ BinTree<int> Torneo::procesar_torneo(const BinTree<int> &c, mJugadores &lista_ju
     }
     
     //comprovar si la posicion es puntuable
-    if (i <= lista_ctg.cantidad_puntos()) {
+    if (i+1 <= lista_ctg.cantidad_puntos()) {
         if (wsa > wsb) {
-            if (i == 1) participantes[a].second = lista_ctg.consultar_puntos(categoria, 0);
-            participantes[b].second = lista_ctg.consultar_puntos(categoria, i);
+            if (i == 0) participantes[a].second = lista_ctg.consultar_puntos(categoria, 0);
+            participantes[b].second = lista_ctg.consultar_puntos(categoria, i+1);
         }
         else {
-            if (i == 1) participantes[b].second = lista_ctg.consultar_puntos(categoria, 0);
-            participantes[a].second = lista_ctg.consultar_puntos(categoria, i);
+            if (i == 0) participantes[b].second = lista_ctg.consultar_puntos(categoria, 0);
+            participantes[a].second = lista_ctg.consultar_puntos(categoria, i+1);
         }
     }
 
@@ -175,7 +175,7 @@ void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
     if (exparticipantes.size() != 0) purgar_puntos(lista_jug);
 
     list<string> datos;
-    BinTree<int> resultados = procesar_torneo(cuadro, lista_jug, lista_ctg, datos, 1);
+    BinTree<int> resultados = procesar_torneo(cuadro, lista_jug, lista_ctg, datos, 0);
     list<string>::iterator it = datos.begin();
     escribir_resultados(resultados, it);
     cout << endl;

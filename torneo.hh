@@ -59,8 +59,8 @@ class Torneo {
 
         /** @brief Crear cuadro de resultados
             
-            \pre i es la altura del nodo actual, además de la posición puntuable i de la categoría
-            de conj_ctg a la que pertenece el torneo. c es un nodo de altura i del cuadro de
+            \pre i+1 es la altura del nodo actual, además de la posición puntuable i+1 de la categoría
+            de conj_ctg a la que pertenece el torneo. c es un nodo de altura i+1 del cuadro de
             emparejamientos del torneo
             \post Se ha devuelto un árbol con el valor de c (una posición de ranking de conj_jug) 
             si no se ha disputado un torneo en este nodo, o un árbol cuyo valor es la posición de 

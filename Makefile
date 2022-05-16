@@ -48,3 +48,13 @@ clean:
 
 tar: program.cc mapa_torneos.hh mapa_torneos.cc mapa_jugadores.hh mapa_jugadores.cc mapa_categorias.hh mapa_categorias.cc jugador.hh jugador.cc torneo.hh torneo.cc Makefile BinTree.hh
 	tar -cvf practica.tar program.cc mapa_torneos.hh mapa_torneos.cc mapa_jugadores.hh mapa_jugadores.cc mapa_categorias.hh mapa_categorias.cc jugador.hh jugador.cc torneo.hh torneo.cc Makefile BinTree.hh
+
+dtar: doc/html/index.html
+	tar -cvf doc.tar doc/
+
+####################################
+###         DOCUMENTAR           ###
+####################################
+
+doc: Doxyfile program.cc mapa_torneos.hh mapa_torneos.cc mapa_jugadores.hh mapa_jugadores.cc mapa_categorias.hh mapa_categorias.cc jugador.hh jugador.cc torneo.hh torneo.cc Makefile BinTree.hh
+	doxygen Doxyfile
