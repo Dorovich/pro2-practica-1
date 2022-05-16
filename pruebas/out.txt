@@ -1,0 +1,184 @@
+#listar_categorias
+3 5
+King_of_the_Hill 2000 0 0 0 0
+Masters_Peru 1000 700 300 100 50
+Open_Mejico 500 250 100 70 20
+#listar_torneos
+1
+Monterrey Open_Mejico
+#listar_jugadores
+10
+Amalarico Rk:1 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Atanagildo Rk:5 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Ataulfo Rk:7 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Eurico Rk:8 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Recaredo Rk:6 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Rodrigo Rk:9 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Sigerico Rk:3 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Sisenando Rk:10 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Teodoredo Rk:4 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+Turismundo Rk:2 Ps:0 Ts:0 WM:0 LM:0 WS:0 LS:0 WG:0 LG:0
+#listar_ranking
+1 Amalarico 0
+2 Turismundo 0
+3 Sigerico 0
+4 Teodoredo 0
+5 Atanagildo 0
+6 Recaredo 0
+7 Ataulfo 0
+8 Eurico 0
+9 Rodrigo 0
+10 Sisenando 0
+#it Monterrey
+(((1.Amalarico (8.Eurico 9.Rodrigo)) (4.Teodoredo 5.Atanagildo)) ((2.Turismundo (7.Ataulfo 10.Sisenando)) (3.Sigerico 6.Recaredo)))
+#ft Monterrey
+(5.Atanagildo vs 10.Sisenando 1-0(1.Amalarico vs 5.Atanagildo 0-1(1.Amalarico vs 8.Eurico 1-0(8.Eurico vs 9.Rodrigo 1-0))(4.Teodoredo vs 5.Atanagildo 0-1))(10.Sisenando vs 3.Sigerico 1-0(2.Turismundo vs 10.Sisenando 0-1(7.Ataulfo vs 10.Sisenando 0-1))(3.Sigerico vs 6.Recaredo 1-0)))
+1.Amalarico 100
+2.Turismundo 70
+3.Sigerico 100
+4.Teodoredo 70
+5.Atanagildo 500
+6.Recaredo 70
+7.Ataulfo 20
+8.Eurico 70
+9.Rodrigo 20
+10.Sisenando 250
+#listar_categorias
+3 5
+King_of_the_Hill 2000 0 0 0 0
+Masters_Peru 1000 700 300 100 50
+Open_Mejico 500 250 100 70 20
+#listar_torneos
+1
+Monterrey Open_Mejico
+#listar_jugadores
+10
+Amalarico Rk:3 Ps:100 Ts:1 WM:1 LM:1 WS:0 LS:0 WG:0 LG:0
+Atanagildo Rk:1 Ps:500 Ts:1 WM:3 LM:0 WS:0 LS:0 WG:0 LG:0
+Ataulfo Rk:9 Ps:20 Ts:1 WM:0 LM:1 WS:0 LS:0 WG:0 LG:0
+Eurico Rk:8 Ps:70 Ts:1 WM:1 LM:1 WS:0 LS:0 WG:0 LG:0
+Recaredo Rk:7 Ps:70 Ts:1 WM:0 LM:1 WS:0 LS:0 WG:0 LG:0
+Rodrigo Rk:10 Ps:20 Ts:1 WM:0 LM:1 WS:0 LS:0 WG:0 LG:0
+Sigerico Rk:4 Ps:100 Ts:1 WM:1 LM:1 WS:0 LS:0 WG:0 LG:0
+Sisenando Rk:2 Ps:250 Ts:1 WM:3 LM:1 WS:0 LS:0 WG:0 LG:0
+Teodoredo Rk:6 Ps:70 Ts:1 WM:0 LM:1 WS:0 LS:0 WG:0 LG:0
+Turismundo Rk:5 Ps:70 Ts:1 WM:0 LM:1 WS:0 LS:0 WG:0 LG:0
+#listar_ranking
+1 Atanagildo 500
+2 Sisenando 250
+3 Amalarico 100
+4 Sigerico 100
+5 Turismundo 70
+6 Teodoredo 70
+7 Recaredo 70
+8 Eurico 70
+9 Ataulfo 20
+10 Rodrigo 20
+#bt Monterrey
+0
+#lt
+0
+#nt Ciudad_de_Mejico 3
+1
+#nt Lima 2
+2
+#nt Royal 1
+3
+#bj Amalarico
+9
+#bj Turismundo
+8
+#bj Sigerico
+7
+#bj Teodoredo
+6
+#bj Atanagildo
+5
+#bj Recaredo
+4
+#bj Ataulfo
+3
+#bj Eurico
+2
+#bj Rodrigo
+1
+#bj Sisenando
+0
+#lj
+0
+#nj Alfa
+1
+#nj Bravo
+2
+#nj Charlie
+3
+#nj Echo
+4
+#nj Foxtrot
+5
+#nj Golf
+6
+#nj Hotel
+7
+#nj India
+8
+#nj Juliett
+9
+#nj Kilo
+10
+#nj Lima
+11
+#nj Mike
+12
+#nj November
+13
+#nj Oscar
+14
+#nj Papa
+15
+#nj Quebec
+16
+#nj Romeo
+17
+#nj Sierra
+18
+#nj Tango
+19
+#nj Uniform
+20
+#nj Victor
+21
+#nj Whiskey
+22
+#nj XRay
+23
+#nj Yankee
+24
+#nj Zulu
+25
+#lr
+1 Alfa 0
+2 Bravo 0
+3 Charlie 0
+4 Echo 0
+5 Foxtrot 0
+6 Golf 0
+7 Hotel 0
+8 India 0
+9 Juliett 0
+10 Kilo 0
+11 Lima 0
+12 Mike 0
+13 November 0
+14 Oscar 0
+15 Papa 0
+16 Quebec 0
+17 Romeo 0
+18 Sierra 0
+19 Tango 0
+20 Uniform 0
+21 Victor 0
+22 Whiskey 0
+23 XRay 0
+24 Yankee 0
+25 Zulu 0
