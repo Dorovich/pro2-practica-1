@@ -21,14 +21,14 @@ void mJugadores::leer() {
     }
 }
 
-void mJugadores::anadir(string n) {
+void mJugadores::anadir(const string &n) {
     jugadores[n] = Jugador(0, size+1);
     rnk.push_back(jugadores.find(n));
     size++;
     cout << size << endl;
 }
 
-void mJugadores::baja(string n) {
+void mJugadores::baja(const string &n) {
     map<string,Jugador>::iterator it = jugadores.find(n);
     int i = 0;
     while (rnk[i] != it) i++;
@@ -60,18 +60,18 @@ void mJugadores::ranking() {
     }
 }
 
-void mJugadores::add_stat(string nombre, string stat, int val) {
+void mJugadores::add_stat(const string &nombre, const string &stat, int val) {
     map<string,Jugador>::iterator it = jugadores.find(nombre);
     it->second.add_stat(stat, val);
 }
 
-int mJugadores::consultar_stat(string nombre, string stat) const {
+int mJugadores::consultar_stat(const string &nombre, const string &stat) const {
     map<string,Jugador>::const_iterator it = jugadores.find(nombre);
     if (it != jugadores.end()) return it->second.consultar_stat(stat);
     else return 0;
 }
 
-int mJugadores::consultar_stat(int rank, string stat) const {
+int mJugadores::consultar_stat(int rank, const string &stat) const {
     return rnk[rank]->second.consultar_stat(stat);
 }
 
@@ -102,7 +102,7 @@ void mJugadores::escribir() const {
     }
 }
 
-void mJugadores::escribir(string s) const {
+void mJugadores::escribir(const string &s) const {
     map<string,Jugador>::const_iterator it = jugadores.find(s);
     cout << it->first << ' ';
     cout << "Rk:" << it->second.consultar_stat("rank") << ' ';
@@ -116,7 +116,7 @@ void mJugadores::escribir(string s) const {
     cout << "LG:" << it->second.consultar_stat("lg") << endl;
 }
 
-bool mJugadores::existe(string n) const {
+bool mJugadores::existe(const string &n) const {
     return jugadores.end() != jugadores.find(n);
 }
 

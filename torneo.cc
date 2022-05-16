@@ -3,14 +3,14 @@
 
 Torneo::Torneo() {
     categoria = 0;
-    ini = false;
-    debut = true;
+    participantes = vector<pair<string,int>> (0);
+    exparticipantes = vector<pair<string,int>> (0);
 }
 
 Torneo::Torneo(int c) {
     categoria = c;
-    ini = false;
-    debut = true;
+    participantes = vector<pair<string,int>> (0);
+    exparticipantes = vector<pair<string,int>> (0);
 }
 
 void Torneo::purgar_puntos(mJugadores &lista_jug) {
@@ -20,7 +20,7 @@ void Torneo::purgar_puntos(mJugadores &lista_jug) {
 }
 
 void Torneo::purgar_jugador(const string &nombre) {
-    if (not ini) return;
+    if (participantes.size() == 0) return;
 
     bool found = false;
     int i = 0;
@@ -39,7 +39,7 @@ int Torneo::consultar_ctg() const {
 }
 
 bool Torneo::iniciado() const {
-    return ini;
+    return participantes.size() != 0;
 }
 
 Torneo::~Torneo() {}
@@ -67,8 +67,6 @@ void Torneo::escribir_cuadro(const BinTree<int> &c) {
 }
 
 void Torneo::iniciar(mJugadores &lista_jug) {
-    if (not ini) ini = true;
-
     int size;
     cin >> size;
 
@@ -174,12 +172,10 @@ void Torneo::escribir_resultados (const BinTree<int> &r, list<string>::iterator 
 }
 
 void Torneo::finalizar(const mCategorias &lista_ctg, mJugadores &lista_jug) {
-    if (debut) debut = false;
-    else purgar_puntos(lista_jug);
+    if (exparticipantes.size() != 0) purgar_puntos(lista_jug);
 
     list<string> datos;
     BinTree<int> resultados = procesar_torneo(cuadro, lista_jug, lista_ctg, datos, 0);
-
     list<string>::iterator it = datos.begin();
     escribir_resultados(resultados, it);
     cout << endl;

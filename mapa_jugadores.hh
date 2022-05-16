@@ -55,7 +55,7 @@ class mJugadores {
             \pre No existe un jugador con identificador n en el mapa
             \post Se ha añadido un jugador con identificador n y 0 puntos al mapa
         */
-        void anadir (string n);
+        void anadir (const string &n);
 
         /** @brief Dar de baja a un jugador
                 
@@ -63,7 +63,7 @@ class mJugadores {
             \post Se ha dado de baja al jugador con identificador n, y sus sucesores han
             subido un puesto en el ranking
         */
-        void baja (string n);
+        void baja (const string &n);
 
         /** @brief Añadir a atributo
 
@@ -71,7 +71,7 @@ class mJugadores {
             \post El atributo stat del jugador de nombre "nombre" ha pasado a tener
             el valor que tenía más val
         */
-        void add_stat(string nombre, string stat, int val);
+        void add_stat(const string &nombre, const string &stat, int val);
 
         /** @brief Reordenar ranking
 
@@ -96,7 +96,7 @@ class mJugadores {
             \pre <em>cierto</em>
             \post Se ha devuelto el valor del atributo stat del jugador de nombre "nombre"
         */
-        int consultar_stat(string nombre, string stat) const;
+        int consultar_stat(const string &nombre, const string &stat) const;
 
         /** @brief Consultar atributo de jugador
 
@@ -104,7 +104,7 @@ class mJugadores {
             \post Se ha devuelto el valor del atributo stat del jugador de posición de
             ranking rank
         */
-        int consultar_stat(int rank, string stat) const;
+        int consultar_stat(int rank, const string &stat) const;
 
         /** @brief Consultar nombre de jugador
 
@@ -128,7 +128,7 @@ class mJugadores {
             \post Se ha escrito por el canal estándar de salida el nombre y todas las
             estadísticas del jugador de identificador n del circuito
         */
-        void escribir (string n) const;
+        void escribir (const string &n) const;
 
         /** @brief Comprovación de existencia
 
@@ -136,7 +136,7 @@ class mJugadores {
             \post Se devuelve true si el jugador de nombre n existe en el circuito, o
             false en caso contrario
         */
-        bool existe(string n) const;
+        bool existe(const string &n) const;
 
         // Destructora
         

@@ -23,8 +23,6 @@ class Torneo {
     private:
         
         int categoria;
-        bool ini;
-        bool debut;
         BinTree<int> cuadro;
         vector<pair<string,int>> participantes;
         vector<pair<string,int>> exparticipantes;
