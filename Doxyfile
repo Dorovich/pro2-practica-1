@@ -129,7 +129,7 @@ FILE_PATTERNS          = *.c \
                          *.hh \
                          *.md \
 RECURSIVE              = NO
-EXCLUDE                =
+EXCLUDE                = BinTree.hh
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       =
 EXCLUDE_SYMBOLS        =

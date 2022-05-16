@@ -2,9 +2,9 @@
 King_of_the_Hill
 Masters_Peru
 Open_Mejico
-2000 0 0 0 0 0
+2000 0   0   0   0
 1000 700 300 100 50
-500 250 100 70 20
+500  250 100 70  20
 
 1
 Monterrey 3
