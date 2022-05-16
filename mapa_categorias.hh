@@ -38,8 +38,9 @@ class mCategorias {
         
         /** @brief Operación de lectura
                 
-            \pre <em>cierto</em>
-            \post Se han leido todas las categorías que cabían en la lista
+            \pre En el canal estándar de entrada hay tantos nombres como categorías declaradas, seguidos
+            de tantas listas como categorías hay, donde cada una tiene tantos valores como niveles hay
+            \post Se han leído todas las categorías que cabían en el conjunto
         */
         void leer();
         
@@ -63,7 +64,8 @@ class mCategorias {
 
         /** @brief Consultora de puntos
                 
-            \pre <em>cierto</em>
+            \pre id corresponde al identificador de una categoría válida, y n a una posición puntuable
+            de la categoría
             \post Se devuelve la cantidad de puntos que corresponden a la posición n en la categoría
             de identificador id
         */
@@ -72,22 +74,22 @@ class mCategorias {
         /** @brief Consultora de cantidad de puntos
                 
             \pre <em>cierto</em>
-            \post Se devuelve la cantidad de posiciones puntuables de la categoría
+            \post Se devuelve la cantidad de posiciones puntuables (niveles) del parámetro implícito
         */
         int cantidad_puntos() const;
 
         /** @brief Comprovación de existencia
 
             \pre <em>cierto<em>
-            \post Se devuelve true si la categoría de nombre n existe en el circuito, o
+            \post Se devuelve true si la categoría de identificador id existe en el circuito, o
             false en caso contrario
         */
-        bool existe(int n) const;
+        bool existe(int id) const;
         
         /** @brief Consultora de cantidad de categorías
                 
             \pre <em>cierto</em>
-            \post Se devuelve la cantidad de categorías que existen
+            \post Se devuelve la cantidad de categorías que existen en el circuito
         */
         int numero_ctg() const;
 

@@ -45,33 +45,34 @@ class mJugadores {
         
         /** @brief Operación de lectura
                 
-            \pre <em>cierto</em>
-            \post Se han leído tantos jugadores como tamaño tiene el mapa
+            \pre En el canal estándar de entrada hay tantos nombres como jugadores
+            fueron declarados inicialmente
+            \post Se han leído todos los jugadores que cabían en el conjunto
         */
         void leer ();
 
         /** @brief Añadir un jugador
                 
-            \pre No existe un jugador con identificador n en el mapa
+            \pre No existe un jugador con identificador n en el circuito
             \post Se ha añadido un jugador con identificador n y 0 puntos al mapa
         */
         void anadir (const string &n);
 
         /** @brief Dar de baja a un jugador
                 
-            \pre Existe un jugador con identificador n en el mapa
+            \pre Existe un jugador con identificador n en el circuito
             \post Se ha dado de baja al jugador con identificador n, y sus sucesores han
             subido un puesto en el ranking
         */
         void baja (const string &n);
 
-        /** @brief Añadir a atributo
+        /** @brief Sumar estadística
 
             \pre <em>cierto</em>
-            \post El atributo stat del jugador de nombre "nombre" ha pasado a tener
-            el valor que tenía más val
+            \post La estadística s del jugador de nombre n ha pasado a tener el valor
+            que tenía más val
         */
-        void add_stat(const string &nombre, const string &stat, int val);
+        void add_stat(const string &n, const string &s, int val);
 
         /** @brief Reordenar ranking
 
@@ -91,27 +92,26 @@ class mJugadores {
         */
         void ranking ();
 
-        /** @brief Consultar atributo de jugador
+        /** @brief Consultar estadística por nombre de jugador
 
-            \pre <em>cierto</em>
-            \post Se ha devuelto el valor del atributo stat del jugador de nombre "nombre"
+            \pre El jugador de nombre n existe en el circuito, s es una estadística válida
+            \post Se ha devuelto el valor de la estadística s del parámetro implícito
         */
-        int consultar_stat(const string &nombre, const string &stat) const;
+        int consultar_stat(const string &n, const string &s) const;
 
-        /** @brief Consultar atributo de jugador
+        /** @brief Consultar estadística por posición de ranking
 
-            \pre <em>cierto</em>
-            \post Se ha devuelto el valor del atributo stat del jugador de posición de
-            ranking rank
+            \pre Existe un jugador en la posición r del ranking, s es una estadística válida
+            \post Se ha devuelto el valor de la estadística s del parámetro implícito
         */
-        int consultar_stat(int rank, const string &stat) const;
+        int consultar_stat(int r, const string &s) const;
 
         /** @brief Consultar nombre de jugador
 
-            \pre <em>cierto</em>
-            \post Se ha devuelto el nombre del jugador de posición de ranking rank
+            \pre Existe un jugador en la posición r del ranking
+            \post Se ha devuelto el nombre del jugador de posición de ranking r
         */
-        string consultar_nombre(int rank) const;
+        string consultar_nombre(int r) const;
 
         /** @brief Operación de escritura indefinida
                 
@@ -124,7 +124,7 @@ class mJugadores {
 
         /** @brief Operación de escritura definida
                 
-            \pre Existe un jugador con identificador n en el mapa
+            \pre Existe un jugador de nombre n en el circuito
             \post Se ha escrito por el canal estándar de salida el nombre y todas las
             estadísticas del jugador de identificador n del circuito
         */

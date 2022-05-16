@@ -59,14 +59,14 @@ class Jugador {
         
         /** @brief Modificar estadística
                 
-            \pre <em>cierto</em>
+            \pre s es una de las estadísticas de los jugadores
             \post La estadística s del parámetro implícito ha pasado a ser p
         */
         void modificar_stat (const string &s, int p);
 
         /** @brief Suma a estadística
 
-            \pre <em>cierto</em>
+            \pre s es una de las estadísticas de los jugadores
             \post La estadística s del parámetro implícito ha pasado a ser el valor que
             tenía más p
         */
@@ -76,7 +76,7 @@ class Jugador {
         
         /** @brief Consultar estadística
                 
-            \pre <em>cierto</em>
+            \pre s es una de las estadísticas de los jugadores
             \post Se devuelve el valor de la estadística s del parámetro implícito
         */
         int consultar_stat(const string &s) const;
