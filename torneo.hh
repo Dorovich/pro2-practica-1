@@ -22,9 +22,13 @@ using namespace std;
 class Torneo {
     private:
         
+        /** @brief Categoría a la que pertenece */
         int categoria;
+        /** @brief Cuadro de emparejamientos */
         BinTree<int> cuadro;
+        /** @brief Participantes de la edición actual */
         vector<pair<string,int>> participantes;
+        /** @brief Participantes de la anterior edición */
         vector<pair<string,int>> exparticipantes;
 
         /** @brief Crear cuadro de emparejamientos
@@ -154,8 +158,8 @@ class Torneo {
 
         // Destructora
         
+        /** @brief Destructora por defecto */
         ~Torneo();
-
 };
 
 #endif

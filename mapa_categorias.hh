@@ -18,9 +18,13 @@ using namespace std;
 class mCategorias {
     private:
 
+        /** @brief Mapa de categorías */
         map<string,vector<int>> categorias;
+        /** @brief Vector de consulta de nombres */
         vector<string> nombres;
+        /** @brief Cantidad de categorías del circuito */
         int size;
+        /** @brief Cantidad de posiciones puntuables */
         int maxpuntos;
 
     public:
@@ -93,8 +97,9 @@ class mCategorias {
         */
         int numero_ctg() const;
 
-        // Destructoras
+        // Destructora
         
+        /** @brief Destructora por defecto */
         ~mCategorias();
 };
 

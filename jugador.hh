@@ -16,19 +16,24 @@ using namespace std;
 class Jugador {
     private:
             
-        // el objeto jugador no tiene un nombre asociado, lo tiene en el mapa
-        int puntos, rank;
-
-        /* INFO STATS RAROS
-            ts: torneos en que ha participado (incrementar al acabar)
-            wm: won matches
-            lm: lost matches
-            ws: won sets
-            ls: lost sets
-            wg: won games
-            lg: lost games
-        */
-        int ts, wm, lm, ws, ls, wg, lg;
+        /** @brief Puntos totales obtenidos */
+        int puntos;
+        /** @brief Posición en el ranking */
+        int rank;
+        /** @brief Torneos en que se ha participado */
+        int ts;
+        /** @brief Partidos ganados */
+        int wm;
+        /** @brief Partidos perdidos */
+        int lm;
+        /** @brief Sets ganados */
+        int ws;
+        /** @brief Sets perdidos */
+        int ls;
+        /** @brief Juegos ganados */
+        int wg;
+        /** @brief Juegos perdidos */
+        int lg;
             
     public:
         
@@ -81,8 +86,9 @@ class Jugador {
         */
         int consultar_stat(const string &s) const;
         
-        // Destructoras
+        // Destructora
         
+        /** @brief Destructora por defecto */
         ~Jugador();
 };
 

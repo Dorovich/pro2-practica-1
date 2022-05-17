@@ -30,9 +30,8 @@
 *.out
 *.app
 
-# Documentación
-doc
-
 # Otros
+doc
 bak
 *.tar
+*.zip

@@ -19,8 +19,11 @@ using namespace std;
 class mJugadores {
     private:
         
+        /** @brief Ranking de jugadores */
         vector<map<string,Jugador>::iterator> rnk;
+        /** @brief Mapa de jugadores */
         map<string,Jugador> jugadores;
+        /** @brief Cantidad de jugadores del circuito */
         int size;
 
         /** @brief Operación de comparación
@@ -148,6 +151,7 @@ class mJugadores {
 
         // Destructora
         
+        /** @brief Destructora por defecto */
         ~mJugadores();
 };
 

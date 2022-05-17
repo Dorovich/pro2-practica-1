@@ -1,14 +1,15 @@
-3 5
-King_of_the_Hill
-Masters_Peru
-Open_Mejico
-2000 0   0   0   0
-1000 700 300 100 50
-500  250 100 70  20
+### ENTRADA COMENTADA ###
 
+
+3 5
+King_of_the_Hill            # Únicamente gana puntos el ganador final
+Masters_Peru                # Torneo para jugadores avanzados
+Open_Mejico                 # Torneo para jugadores de nivel medio
+2000   0   0   0  0
+1000 700 300 100 50
+500  250 100  70 20
 1
 Monterrey 3
-
 10
 Amalarico
 Turismundo
@@ -21,11 +22,11 @@ Eurico
 Rodrigo
 Sisenando
 
-listar_categorias
-listar_torneos
-listar_jugadores
-listar_ranking
-it Monterrey
+listar_categorias           # Demostrar la correcta lectura inicial de categorias
+listar_torneos              # Demostrar la correcta lectura inicial de torneos
+listar_jugadores            # Demostrar la correcta lectura inicial de jugadores
+listar_ranking              # Demostrar la correcta posición inicial de los jugadores
+it Monterrey                # Iniciar el torneo Monterrey
 10
   1 2 3 4 5 6 7 8 9 10
 ft Monterrey

@@ -19,7 +19,9 @@ using namespace std;
 class mTorneos {
     private:
         
+        /** @brief Mapa de torneos */
         map<string,Torneo> torneos;
+        /** @brief Cantidad de torneos del circuito */
         int size;
         
     public:
@@ -109,6 +111,7 @@ class mTorneos {
         
         // Destructora
         
+        /** @brief Destructora por defecto */
         ~mTorneos();
 };
 
