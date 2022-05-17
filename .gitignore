@@ -33,5 +33,6 @@
 # Otros
 doc
 bak
+generator
 *.tar
 *.zip

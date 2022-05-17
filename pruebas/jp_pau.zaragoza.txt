@@ -103,7 +103,7 @@ bj Mike
 bj Ethan
 bj Jack
 bj Paco
-nj Ahmed                        # Se vuelven a añadir los mismos jugadores, solo que deberan tener 0 puntos
+nj Ahmed                        # Se vuelven a añadir los mismos jugadores, solo que deberán tener 0 puntos
 nj Mohamed
 nj Willy
 nj Ramiro
@@ -184,7 +184,7 @@ lj
 it Worlds_2022                  # Inicio del torneo Worlds_2022 (se clasifican los 16 mejores jugadores del MSI anterior)
 16
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
-it Piston_Cup                   # Inicio del torneo Piston_Cup (segunda edicion) (dso torneos iniciados simultaneamente)
+it Piston_Cup                   # Inicio del torneo Piston_Cup (segunda edicion) (dos torneos iniciados simultaneamente)
 9
  18 19 20 21 22 23 24 25 33
 bt Pachanguita                  # Se da de baja el torneo Pachanguita
